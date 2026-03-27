@@ -1,0 +1,18 @@
+{
+  "name": "madewell-dev-workflow",
+  "version": "1.0.0",
+  "private": false,
+  "description": "PRD generation, phased implementation planning, and CI/CD infrastructure hardening for Madewell project workflows.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stevenlight/madewell-dev-workflow"
+  },
+  "keywords": [
+    "cursor-plugin",
+    "skills",
+    "prd",
+    "ci-cd",
+    "development-workflow"
+  ]
+}

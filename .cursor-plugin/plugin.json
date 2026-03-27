@@ -1,0 +1,27 @@
+{
+  "name": "madewell-dev-workflow",
+  "version": "1.0.0",
+  "description": "PRD generation, phased implementation planning, and CI/CD infrastructure hardening for Madewell project workflows. Turns a free-form project brief into a canonical PRD, decomposes it into staged development plans, and enforces quality gates throughout delivery.",
+  "author": {
+    "name": "Steven Light"
+  },
+  "repository": "https://github.com/stevenlight/madewell-dev-workflow",
+  "license": "MIT",
+  "keywords": [
+    "prd",
+    "product-requirements",
+    "phased-plans",
+    "ci-cd",
+    "e2e-testing",
+    "quality-gates",
+    "linear",
+    "turborepo",
+    "nextjs",
+    "supabase",
+    "development-workflow",
+    "implementation-planning"
+  ],
+  "skills": "skills",
+  "commands": "commands",
+  "rules": "rules"
+}
