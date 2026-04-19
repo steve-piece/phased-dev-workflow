@@ -22,6 +22,7 @@ Each subagent lives in its own file under `./agents/`. **Read the file before di
 | 4     | [agents/implementer.md](agents/implementer.md)             | `generalPurpose`        | `claude-4.6-sonnet-medium-thinking` | write    |
 | 4     | [agents/spec-reviewer.md](agents/spec-reviewer.md)         | `code-reviewer`         | `claude-4.6-sonnet-medium-thinking` | readonly |
 | 4     | [agents/quality-reviewer.md](agents/quality-reviewer.md)   | `correctness-reviewer`  | `claude-4.6-sonnet-medium-thinking` | readonly |
+| 5     | [agents/ci-cd-guardrails.md](agents/ci-cd-guardrails.md)   | `generalPurpose`        | `claude-4.6-sonnet-medium-thinking` | readonly |
 
 **Hard model rule:** every `Task` call MUST set `model: "claude-4.6-sonnet-medium-thinking"` (or fall back to `composer-2` / `gemini-3-flash` if unavailable). Never substitute upward — no Opus, no GPT‑5.x, no Sonnet > 4.6, no Gemini ≥ 3.1.
 
@@ -104,9 +105,17 @@ For each slice, before opening a PR:
   - `@feature` suite for new/changed behavior
   - `@regression-core` suite for critical existing flows
   - rerun impacted historical suites when shared components/routes change
-- If `.github/workflows/ci.yml` or `e2e.yml` are missing, stop and run `/scaffold-ci-cd` first.
+- If `.github/workflows/ci.yml` or `e2e.yml` are missing, stop and run the `sp-ci-cd-scaffold` skill first.
 - If the slice touches shared modules/routes, widen E2E tags accordingly.
 - Artifact upload on E2E failure (trace/video/report) must be in the workflow.
+
+**Dispatch the `ci-cd-guardrails` subagent before opening the PR.** Read [agents/ci-cd-guardrails.md](agents/ci-cd-guardrails.md), pass it the slice diff + workflow inventory + existing E2E inventory + acceptance test, and wait for its structured verdict.
+
+- If the subagent returns `verdict: fail`:
+  - For `infrastructure_intact: false`, run the `sp-ci-cd-scaffold` skill, then re-dispatch.
+  - For `workflow_violations`, send the violations back to the implementer to remove the regressions, then re-dispatch.
+  - For missing E2E coverage (`acceptance_test_observable_by` empty or `proposed_specs` non-empty), send the proposed specs back to the implementer to apply, then re-dispatch.
+- **Do not open the PR until the guardrails verdict is `pass`.**
 
 Never mark a checklist item `[x]` until the gate that proves it is green.
 
