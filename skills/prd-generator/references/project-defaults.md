@@ -1,6 +1,6 @@
 # Default Project Setup
 
-The canonical Madewell stack. Apply these unless a PRD explicitly overrides in section 0.1.
+The canonical Phased stack. Apply these unless a PRD explicitly overrides in section 0.1.
 
 ---
 

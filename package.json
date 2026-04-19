@@ -1,8 +1,8 @@
 {
-  "name": "madewell-dev-workflow",
+  "name": "phased-dev-workflow",
   "version": "1.0.0",
   "private": false,
-  "description": "PRD generation, phased implementation planning, and CI/CD infrastructure hardening for Madewell project workflows.",
+  "description": "PRD generation, phased implementation planning, and CI/CD infrastructure hardening for project workflows.",
   "license": "MIT",
   "repository": {
     "type": "git",

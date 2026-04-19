@@ -1,6 +1,6 @@
 ---
 name: prd-generator
-description: Generate a complete PRD (Product Requirements Document) from a free-form project brief. Use when the user provides a project description and wants a structured PRD, says "create a PRD", "write a PRD", "generate a PRD", "build a PRD", or "document requirements". Follows the Madewell PRD Template v1 with 7 top-level sections (0–6) and a phased implementation plan. References bundled defaults for tech stack, architecture, and delivery conventions.
+description: Generate a complete PRD (Product Requirements Document) from a free-form project brief. Use when the user provides a project description and wants a structured PRD, says "create a PRD", "write a PRD", "generate a PRD", "build a PRD", or "document requirements". Follows the Phased PRD Template v1 with 7 top-level sections (0–6) and a phased implementation plan. References bundled defaults for tech stack, architecture, and delivery conventions.
 ---
 
 # PRD Generator
@@ -133,7 +133,7 @@ If any check fails, fix the gap before writing the file or explicitly flag it wi
 - **Header**: Two lines at top, (1) relative path, (2) one-line semantic description.
 - **Structure**: Follow [references/prd-template-v1.md](references/prd-template-v1.md) exactly. All sections 0–6 and all subsections must be present, even if sparse. Never omit a section.
 - **Section 0** must open with this verbatim note:
-  > Unless explicitly overridden in this document, use the **Madewell Default Project Setup** for all tech stack, architecture, testing, CI/CD, and coding standards.
+  > Unless explicitly overridden in this document, use the **Phased Default Project Setup** for all tech stack, architecture, testing, CI/CD, and coding standards.
 - **Section 0.1 (Overrides)**: If the project diverges from defaults, include a structured override table:
 
   ```markdown
@@ -144,7 +144,7 @@ If any check fails, fix the gap before writing the file or explicitly flag it wi
   |  |  |  |
   ```
 
-  If no overrides, write "None. Project follows Madewell defaults."
+  If no overrides, write "None. Project follows Phased defaults."
 
 ## Handling Missing Information
 

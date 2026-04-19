@@ -9,7 +9,7 @@ Status: Draft | Active
 
 ## 0. Defaults & Conventions
 
-- Unless explicitly overridden in this document, use the **Madewell Default Project Setup** for:
+- Unless explicitly overridden in this document, use the **Phased Default Project Setup** for:
   - Tech stack and third party services
   - Monorepo structure, coding standards, and architecture rules
   - Database conventions, migrations, and RLS

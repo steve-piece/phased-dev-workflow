@@ -1,7 +1,7 @@
 {
   "name": "phased-dev-workflow",
   "version": "1.0.0",
-  "description": "PRD generation, phased implementation planning, and CI/CD infrastructure hardening for phased project workflows. Turns a free-form project brief into a canonical PRD, decomposes it into staged development plans, and enforces quality gates throughout delivery.",
+  "description": "PRD generation, phased implementation planning, and CI/CD infrastructure hardening for Phased project workflows. Turns a free-form project brief into a canonical PRD, decomposes it into staged development plans, and enforces quality gates throughout delivery.",
   "author": {
     "name": "Steven Light"
   },
