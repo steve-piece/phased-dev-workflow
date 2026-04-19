@@ -12,15 +12,14 @@
 
 ---
 
-## Stage 1: [Stage Name] ([Owner])
+## Stage 1: CI/CD Scaffolding (canned)
 **Status:** Not Started
-**Ship-blocking:** Yes | No
+**Ship-blocking:** Yes
 
-### Feature: [Feature Name]
-- [ ] Subtask description
-- [ ] Subtask description
+### Feature: CI/CD + E2E Baseline
+- [ ] Run `sp-ci-cd-scaffold` skill end-to-end
 
-**Exit criteria:** [Testable condition.]
+**Exit criteria:** Every box in `sp-ci-cd-scaffold/references/scaffold-completion-checklist.md` is `[x]`.
 
 ---
 
@@ -112,6 +111,39 @@ git commit -m "feat: [description]"
 ---
 
 **Exit criteria:** [Testable conditions — commands to run, expected output.]
+```
+
+## Stage 1 (Canned) Template
+
+`docs/plans/stage_1_ci_cd_scaffold.md` is **always written by the `prd-to-phased-plans` orchestrator skill itself** — never by the `phased-plan-writer` subagent. Its body is fixed and simply delegates to the `sp-ci-cd-scaffold` skill. Lift verbatim:
+
+```markdown
+<!-- docs/plans/stage_1_ci_cd_scaffold.md -->
+<!-- Stage 1: bootstrap CI/CD + E2E baseline via sp-ci-cd-scaffold skill -->
+
+# Stage 1: CI/CD Scaffolding
+
+**Goal:** Bootstrap CI/CD + E2E baseline before any feature work begins.
+
+**Architecture:** Establishes Playwright suites (`@feature`, `@regression-core`), GitHub Actions workflows (`ci.yml`, `e2e.yml`, `e2e-coverage.yml`), Husky `pre-push`, PR template, and the branch-protection setup script. Every later stage depends on this baseline.
+
+**Tech Stack:** Playwright, GitHub Actions, Husky, `gh` CLI.
+
+**Owner:** Run the [`sp-ci-cd-scaffold`](../../.cursor/skills/sp-ci-cd-scaffold/SKILL.md) skill end-to-end.
+
+---
+
+## Tasks
+
+This stage's task list is intentionally not duplicated here. The single task is:
+
+- Run the `sp-ci-cd-scaffold` skill in full.
+
+The skill's `SKILL.md` (Phases 0–6) is the source of truth for the work. Its `references/scaffold-completion-checklist.md` is the source of truth for "done".
+
+---
+
+**Exit criteria:** Every box in `sp-ci-cd-scaffold/references/scaffold-completion-checklist.md` is `[x]`. The PR for `chore/ci-cd-scaffold` is merged into `main`, CI is green on the merged head SHA, and the working tree is clean on `main` with no leftover branches.
 ```
 
 ## Naming Conventions

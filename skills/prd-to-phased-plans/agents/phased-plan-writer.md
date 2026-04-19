@@ -58,6 +58,18 @@ Every stage plan file you produce MUST include, in order:
    - **Commit**: suggested conventional-commit message
 10. **Exit criteria**: testable, binary conditions (e.g. `pnpm test` passes, `pnpm build` succeeds, route `/admin` renders without errors). No vague language.
 
+## Out of Scope
+
+- **Never write `stage_1_ci_cd_scaffold.md`.** Stage 1 is a canned CI/CD scaffolding stage written directly by the `prd-to-phased-plans` orchestrator skill from the fixed template in `references/templates.md` ("Stage 1 (Canned) Template"). It delegates entirely to the `sp-ci-cd-scaffold` skill.
+- If the orchestrator dispatches you for stage 1, **stop immediately** and return:
+  ```yaml
+  path: null
+  stage: 1
+  tasks_count: 0
+  dependencies_used: []
+  unresolved: ["stage 1 is canned, do not dispatch this subagent"]
+  ```
+
 ## Hard Rules
 
 - **One file per invocation**. You write exactly the stage plan you were dispatched for. Never touch the master checklist or other stage files.

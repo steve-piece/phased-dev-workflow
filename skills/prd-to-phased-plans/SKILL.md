@@ -27,15 +27,16 @@ Group features into **ordered development stages** based on dependency chains:
 
 1. Map dependencies: which features block others?
 2. Group into stages where each stage's inputs are satisfied by prior stages
-3. Typical ordering pattern:
-   - **Stage 1**: Project scaffolding / template setup (often owner-handled)
+3. **Stage 1 is always CI/CD scaffolding** and references the [`sp-ci-cd-scaffold`](../sp-ci-cd-scaffold/SKILL.md) skill. Do not generate this stage's task list — the stage plan file simply delegates to the skill. Subsequent stages start at Stage 2.
+4. Typical ordering pattern:
+   - **Stage 1 (canned)**: CI/CD + E2E baseline scaffolding via `sp-ci-cd-scaffold` (always present, body fixed by template)
    - **Stage 2**: Database schema / data layer
    - **Stage 3**: Core business logic / engine packages
    - **Stage 4**: Shared UI components
    - **Stage 5-7**: Application-level features (admin, client, integrations)
    - **Stage 8+**: Enhancement features, AI pipelines, seed data
-4. Mark each stage as **ship-blocking (MVP)** or **Phase 2**
-5. Present the proposed stage breakdown to the user for approval before generating files
+5. Mark each stage as **ship-blocking (MVP)** or **Phase 2**. Stage 1 is always ship-blocking.
+6. Present the proposed stage breakdown to the user for approval before generating files
 
 ### Phase 3: Generate Master Checklist
 
@@ -52,7 +53,13 @@ Rules:
 
 Create one file per stage: `docs/plans/stage_N_short_name.md`.
 
-**Dispatch the [`phased-plan-writer`](../../agents/phased-plan-writer.md) subagent — one invocation per stage, in parallel** (use the `Task` tool with `subagent_type: phased-plan-writer`). The orchestrator (this skill) is responsible for intake, stage identification, and the master checklist. The subagent is responsible for writing each individual stage file.
+#### Always-present Stage 1 (canned)
+
+`docs/plans/stage_1_ci_cd_scaffold.md` is **always written by this orchestrator skill**, never by the `phased-plan-writer` subagent. Its body is fixed and simply delegates to the [`sp-ci-cd-scaffold`](../sp-ci-cd-scaffold/SKILL.md) skill — see the **Stage 1 (Canned) Template** section in [references/templates.md](references/templates.md). Do not dispatch the subagent for stage 1.
+
+#### Stages 2..N (subagent-written)
+
+**Dispatch the [`phased-plan-writer`](../../agents/phased-plan-writer.md) subagent — one invocation per stage, in parallel** (use the `Task` tool with `subagent_type: phased-plan-writer`). The orchestrator (this skill) is responsible for intake, stage identification, the master checklist, and Stage 1. The subagent is responsible for writing each individual Stage 2..N file.
 
 For each dispatch, supply the subagent with:
 
