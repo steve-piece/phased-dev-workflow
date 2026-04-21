@@ -1,0 +1,20 @@
+{
+  "name": "phased-dev-workflow",
+  "owner": {
+    "name": "Steven Light"
+  },
+  "plugins": [
+    {
+      "name": "phased-dev-workflow",
+      "source": "./",
+      "description": "PRD generation, phased implementation planning, and CI/CD infrastructure hardening. Includes prd-generator, prd-to-phased-plans, sp-ci-cd-scaffold, sp-feature-delivery, and the-orchestrator skills plus the /the-orchestrator command.",
+      "version": "1.0.0",
+      "keywords": [
+        "prd",
+        "phased-plans",
+        "ci-cd",
+        "development-workflow"
+      ]
+    }
+  ]
+}
