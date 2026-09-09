@@ -586,7 +586,7 @@ Recorded so they are not re-proposed. Each was considered and cut for the stated
 
 - A user-journey map, and an automated pie-boundary cognitive-walkthrough agent. The journey map has the worst information-per-human-minute ratio available and duplicates the pie roadmap, which is already a crude journey. The walkthrough METHOD is credible — scenario-driven, two of its four per-step questions mechanically checkable, fewer findings at higher severity — but it needs a dev server booted at a boundary that does not boot one today, plus a new agent, to pre-empt a human who is already stopping and never auto-approving.
 
-- Migrating hooks/hooks.json off the undocumented bare event map. Real debt — every deterministic guarantee rides on that file and ByTheSlice 5.0.0 is the reference library's own cited instance of the shape — but bundling a parser-shape migration into a frontend change is how both land badly. Its own PR.
+- Migrating hooks/hooks.json off the undocumented bare event map (landed separately in 5.1.1, after Claude Code 2.1.263 started refusing to load the bare shape). Real debt — every deterministic guarantee rides on that file and ByTheSlice 5.0.0 is the reference library's own cited instance of the shape — but bundling a parser-shape migration into a frontend change is how both land badly. Its own PR.
 
 ---
 

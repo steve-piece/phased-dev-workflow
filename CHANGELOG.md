@@ -19,6 +19,10 @@ All notable changes to **🍕 ByTheSlice** are tracked here, slice by slice. The
 
 - **Phase 3 sub-blocks relettered to stay strictly sequential** now that a block was inserted mid-sequence: branch protection moved `F` to `G`, and the project-rules append moved `G` to `H`. The rule is now written down in the skill: no gaps, no suffixes, no `E2`-style insertions, and inserting a block means relettering everything after it. Past `Z` the sequence continues `A2` through `Z2`, then `A3` through `Z3`, with the digit as a generation counter rather than an insertion marker.
 
+### Fixed
+
+- **`hooks/hooks.json` now wraps every event under a top-level `"hooks"` key.** Claude Code 2.1.263 rejects the bare event map the file used before (`UserPromptSubmit`, `SessionStart`, `PreToolUse`, `PreCompact` at the top level) and refuses to load the whole plugin when a `PreToolUse` hook cannot be parsed. Every `/bytheslice:*` command then reports "Unknown command" in every project. The wrapped shape is the one the official plugins ship, and the hook test suite passes unchanged. Reinstall with `claude plugin marketplace update bytheslice && claude plugin update bytheslice@bytheslice`.
+
 ### Notes
 
 - **This is discovery, not a gate, deliberately.** On the Next.js 16 App Router codebase it was calibrated against, shadscan found 4 real bugs that lint, typecheck, test, build, and E2E all missed, but roughly a third of its failures were false positives or product-opinion, and its score is heavily penalized by deliberate architecture choices (not using shadcn, dark-theme-only with no theme toggle, no command menu). `states` scored 0 percent with every failure a false positive, `interaction` was about half product-opinion, `forms` was mixed, which is why only `accessibility` and `foundation` are in scope.
