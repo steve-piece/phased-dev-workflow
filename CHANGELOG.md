@@ -21,6 +21,7 @@ All notable changes to **🍕 ByTheSlice** are tracked here, slice by slice. The
 
 ### Fixed
 
+- **Dropped the explicit `"hooks": "./hooks/hooks.json"` pointer from `plugin.json`.** Claude Code 2.1.263 loads `hooks/hooks.json` automatically and treats the manifest pointer to the same file as a duplicate, which failed the plugin load a second time right after the shape fix in 5.1.1. The manifest `hooks` field is only for additional hook files. Shipped as 5.1.2.
 - **`hooks/hooks.json` now wraps every event under a top-level `"hooks"` key.** Claude Code 2.1.263 rejects the bare event map the file used before (`UserPromptSubmit`, `SessionStart`, `PreToolUse`, `PreCompact` at the top level) and refuses to load the whole plugin when a `PreToolUse` hook cannot be parsed. Every `/bytheslice:*` command then reports "Unknown command" in every project. The wrapped shape is the one the official plugins ship, and the hook test suite passes unchanged. Reinstall with `claude plugin marketplace update bytheslice && claude plugin update bytheslice@bytheslice`.
 
 ### Notes
