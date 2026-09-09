@@ -200,7 +200,7 @@ assert_exit "sell-slice incomplete Prep" 0
 assert_contains "sell-slice Prep warning" "Prep section incomplete"
 rm -rf "$FIX"
 
-# /sell-slice with complete dashless Prep (canonical v5 format) → PASS
+# /sell-slice with complete legacy bare-box Prep (pre-5.1.3 output) → PASS
 FIX=$(mk_fixture)
 mkdir -p "$FIX/docs/plans"
 cat > "$FIX/docs/plans/00_master_checklist.md" <<'EOF'
@@ -217,7 +217,7 @@ assert_exit "sell-slice dashless Prep complete" 0
 assert_empty "sell-slice dashless Prep complete silent"
 rm -rf "$FIX"
 
-# /sell-slice with incomplete dashless Prep → WARN with correct counts
+# /sell-slice with incomplete legacy bare-box Prep → WARN with correct counts
 FIX=$(mk_fixture)
 mkdir -p "$FIX/docs/plans"
 cat > "$FIX/docs/plans/00_master_checklist.md" <<'EOF'
@@ -234,7 +234,7 @@ assert_exit "sell-slice dashless Prep incomplete" 0
 assert_contains "sell-slice dashless Prep warning" "Prep section incomplete: 1/2"
 rm -rf "$FIX"
 
-# /sell-slice with mixed dashed + dashless Prep boxes → both forms counted
+# /sell-slice with mixed canonical dashed + legacy bare Prep boxes → both forms counted
 FIX=$(mk_fixture)
 mkdir -p "$FIX/docs/plans"
 cat > "$FIX/docs/plans/00_master_checklist.md" <<'EOF'
@@ -242,8 +242,8 @@ cat > "$FIX/docs/plans/00_master_checklist.md" <<'EOF'
 
 ## Prep
 
-- [x] Legacy dashed box
-[ ] Canonical dashless box
+- [x] Canonical dashed box
+[ ] Legacy dashless box
 EOF
 ( cd "$FIX" && git add . && git commit -q -m "checklist" )
 CLAUDE_PROJECT_DIR=$FIX run_hook "$PRECHECK" '{"prompt":"/sell-slice","session_id":"s3c"}'
@@ -383,7 +383,7 @@ assert_not_contains "shop-status flat no awk noise" "syntax error"
 rm -rf "$FIX"
 
 # Nested v5 checklist → pie/slice counts from lib helpers + next open pie;
-# Prep uses the canonical dashless boxes.
+# Prep uses legacy bare boxes (pre-5.1.3 output), which must still count.
 FIX=$(mk_fixture)
 mkdir -p "$FIX/docs/plans"
 cat > "$FIX/docs/plans/00_master_checklist.md" <<'EOF'

@@ -222,32 +222,32 @@ Walk this at the pie boundary. Do not report the pie "ready to ship" (handed to 
 
 ### 1. Pie loop ran clean
 
-[ ] Master checklist is nested; the active Pie was identified; no flat-checklist refusal.
-[ ] Every prior Pie was `Completed` (or the user authorized skipping ahead).
-[ ] The pie-completion `/goal` (or its manual fallback) was set.
-[ ] `review` mode resolved correctly (autonomous per-slice Workflow vs `/sell-slice` continuous mode).
+- [ ] Master checklist is nested; the active Pie was identified; no flat-checklist refusal.
+- [ ] Every prior Pie was `Completed` (or the user authorized skipping ahead).
+- [ ] The pie-completion `/goal` (or its manual fallback) was set.
+- [ ] `review` mode resolved correctly (autonomous per-slice Workflow vs `/sell-slice` continuous mode).
 
 ### 2. Every slice delivered
 
-[ ] Every `### Slice N.M` under the active Pie is `[x]` (status `Completed`).
-[ ] For each slice: the builder emitted a complete **build manifest** (§Appendix A).
-[ ] For each slice: `slice-tester` returned `overall: pass` — every declared affordance exercised, every transition confirmed **both directions on every surface**, and (data-flow slices) the seed cleaned up with **zero residue**.
-[ ] For each slice: `slice-verifier` returned `overall: pass` — lint / typecheck / build / unit-integration / e2e (per `verification.e2e`) / design-system static grep / CI-integrity / manifest under-declaration backstop all clear.
-[ ] The `slice-tester` received **only** the manifest + Exit criteria + design-system path (+ dev URL / type / DB target) — never the builder's context.
-[ ] If `debug-instrumenter` ran on any slice, every `// INSTRUMENT` line was stripped before that slice's commit.
+- [ ] Every `### Slice N.M` under the active Pie is `[x]` (status `Completed`).
+- [ ] For each slice: the builder emitted a complete **build manifest** (§Appendix A).
+- [ ] For each slice: `slice-tester` returned `overall: pass` — every declared affordance exercised, every transition confirmed **both directions on every surface**, and (data-flow slices) the seed cleaned up with **zero residue**.
+- [ ] For each slice: `slice-verifier` returned `overall: pass` — lint / typecheck / build / unit-integration / e2e (per `verification.e2e`) / design-system static grep / CI-integrity / manifest under-declaration backstop all clear.
+- [ ] The `slice-tester` received **only** the manifest + Exit criteria + design-system path (+ dev URL / type / DB target) — never the builder's context.
+- [ ] If `debug-instrumenter` ran on any slice, every `// INSTRUMENT` line was stripped before that slice's commit.
 
 ### 3. Git state per slice
 
-[ ] Each slice committed on the pie branch with `feat(pie-N): N.M — <name>` (closing-narrative paragraph in the body for UI slices).
-[ ] Each slice pushed to the pie branch — **no PR opened, no CI fired** mid-pie.
-[ ] Working tree clean on the pie branch; one worktree per pie.
+- [ ] Each slice committed on the pie branch with `feat(pie-N): N.M — <name>` (closing-narrative paragraph in the body for UI slices).
+- [ ] Each slice pushed to the pie branch — **no PR opened, no CI fired** mid-pie.
+- [ ] Working tree clean on the pie branch; one worktree per pie.
 
 ### 4. Boundary handoff
 
-[ ] Pie completeness confirmed (every slice `[x]`, all commits pushed).
-[ ] Handed off to `/box-it-up` (pie-completion mode) to open the one PR `Pie N`, run CI once, take the merge HITL, merge preserving slice commits, sync main, and clean up branch + worktree.
-[ ] Pie-completion goal cleared/auto-cleared.
-[ ] Final Progress Report emitted with the boundary handoff status.
+- [ ] Pie completeness confirmed (every slice `[x]`, all commits pushed).
+- [ ] Handed off to `/box-it-up` (pie-completion mode) to open the one PR `Pie N`, run CI once, take the merge HITL, merge preserving slice commits, sync main, and clean up branch + worktree.
+- [ ] Pie-completion goal cleared/auto-cleared.
+- [ ] Final Progress Report emitted with the boundary handoff status.
 
 ---
 

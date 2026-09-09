@@ -108,13 +108,13 @@ Dispatch `env-verifier`. The verifier:
 
 Walk this checklist at the end of every run. The stage is not "done" until all items are checked.
 
-[ ] All `.env.example` files in the repo have been scanned and all keys catalogued
-[ ] All detected services are represented in the manual checklist displayed to the user
-[ ] GitHub Secrets section was generated (or confirmed empty if no CI secrets needed)
-[ ] User confirmed all provisioning steps are complete
-[ ] `env-verifier` subagent returned `status: pass` with zero `missing_files`, zero `missing_keys_per_file`, and zero `placeholder_keys`
-[ ] User confirmed GitHub repository secrets are set (or confirmed none are required)
-[ ] If invoked as a `type: env-setup` stage by `sell-slice`, the master-checklist row is flipped to `Completed`
+- [ ] All `.env.example` files in the repo have been scanned and all keys catalogued
+- [ ] All detected services are represented in the manual checklist displayed to the user
+- [ ] GitHub Secrets section was generated (or confirmed empty if no CI secrets needed)
+- [ ] User confirmed all provisioning steps are complete
+- [ ] `env-verifier` subagent returned `status: pass` with zero `missing_files`, zero `missing_keys_per_file`, and zero `placeholder_keys`
+- [ ] User confirmed GitHub repository secrets are set (or confirmed none are required)
+- [ ] If invoked as a `type: env-setup` stage by `sell-slice`, the master-checklist row is flipped to `Completed`
 
 ## Hard Constraints
 

@@ -53,10 +53,10 @@ The agent must locate the CSS variables file, the Tailwind config, and a readabl
 
 ### Step 1 — Structural Check
 
-[ ] Bundle folder exists at `bundle_path`
-[ ] A CSS variables file is present (search for files matching `*.css` containing `:root {`)
-[ ] A Tailwind config file is present (search for `tailwind.config.ts` or `tailwind.config.js`)
-[ ] A token reference document is present (any `.md` file in the bundle root or docs subdirectory)
+- [ ] Bundle folder exists at `bundle_path`
+- [ ] A CSS variables file is present (search for files matching `*.css` containing `:root {`)
+- [ ] A Tailwind config file is present (search for `tailwind.config.ts` or `tailwind.config.js`)
+- [ ] A token reference document is present (any `.md` file in the bundle root or docs subdirectory)
 
 If any structural check fails: set `status: failed`, list the missing files, and return immediately. Do not proceed to token checks.
 
@@ -64,29 +64,29 @@ If any structural check fails: set `status: failed`, list the missing files, and
 
 Read the CSS variables file. For each required token category in `token-checklist.md`, verify:
 
-[ ] **Surface Colors** — all 6 required tokens present in `:root`
-[ ] **Brand Colors** — all 6 required tokens present in `:root`
-[ ] **Semantic Colors** — `--destructive` and `--destructive-foreground` present; note which optional tokens are present
-[ ] **Neutrals** — all 5 required tokens present
-[ ] **Charts** — at minimum `--chart-1` through `--chart-5` present
-[ ] **Sidebar** — if a sidebar layout is indicated by context, all 8 sidebar tokens present; if no sidebar, mark as N/A
-[ ] **Typography — Font Families** — `--font-sans`, `--font-serif`, `--font-mono` present
-[ ] **Type Scale** — at least one full scale (Option A or Option B) is present and documented; approach is identified
-[ ] **Weights/Leading/Tracking** — documented in the token reference document (does not require CSS custom properties)
-[ ] **Radius** — `--radius` base plus at minimum `-sm/-md/-lg/-xl/-pill/-full` variants
-[ ] **Spacing** — decision documented (Tailwind default acceptable if stated)
-[ ] **Shadows** — `--shadow-sm` through `--shadow-2xl` present
-[ ] **Motion** — either duration/easing CSS custom properties present, or motion section in reference document
-[ ] **Breakpoints** — documented in reference document (Tailwind defaults acceptable if stated)
-[ ] **Z-index** — named layers documented in reference document
-[ ] **Dark Mode** — `.dark` block (or equivalent) present in the CSS file with overrides for every color token in `:root`
+- [ ] **Surface Colors** — all 6 required tokens present in `:root`
+- [ ] **Brand Colors** — all 6 required tokens present in `:root`
+- [ ] **Semantic Colors** — `--destructive` and `--destructive-foreground` present; note which optional tokens are present
+- [ ] **Neutrals** — all 5 required tokens present
+- [ ] **Charts** — at minimum `--chart-1` through `--chart-5` present
+- [ ] **Sidebar** — if a sidebar layout is indicated by context, all 8 sidebar tokens present; if no sidebar, mark as N/A
+- [ ] **Typography — Font Families** — `--font-sans`, `--font-serif`, `--font-mono` present
+- [ ] **Type Scale** — at least one full scale (Option A or Option B) is present and documented; approach is identified
+- [ ] **Weights/Leading/Tracking** — documented in the token reference document (does not require CSS custom properties)
+- [ ] **Radius** — `--radius` base plus at minimum `-sm/-md/-lg/-xl/-pill/-full` variants
+- [ ] **Spacing** — decision documented (Tailwind default acceptable if stated)
+- [ ] **Shadows** — `--shadow-sm` through `--shadow-2xl` present
+- [ ] **Motion** — either duration/easing CSS custom properties present, or motion section in reference document
+- [ ] **Breakpoints** — documented in reference document (Tailwind defaults acceptable if stated)
+- [ ] **Z-index** — named layers documented in reference document
+- [ ] **Dark Mode** — `.dark` block (or equivalent) present in the CSS file with overrides for every color token in `:root`
 
 ### Step 3 — Dark Mode Parity Check
 
 Compare every color token defined in `:root` against the tokens defined in `.dark` (or `[data-theme="dark"]`):
 
-[ ] Every `:root` color token has a corresponding dark-mode override
-[ ] No dark-mode token exists without a matching `:root` definition (orphaned dark tokens are a warning, not a failure)
+- [ ] Every `:root` color token has a corresponding dark-mode override
+- [ ] No dark-mode token exists without a matching `:root` definition (orphaned dark tokens are a warning, not a failure)
 
 ### Step 4 — Canonicalize File Paths
 

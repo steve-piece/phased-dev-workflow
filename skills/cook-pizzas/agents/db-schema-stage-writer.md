@@ -59,10 +59,11 @@ The orchestrator provides:
 ## Hard rules
 
 - **One file only**: `docs/plans/stage_4_db_schema_foundation.md`
-- **Frontmatter is mandatory**: `stage: 4`, `type: db-schema`, `slice: horizontal`, `mvp: true`, `depends_on: [1, 2, 3]`
-- **No `- [ ]` checkboxes** — use `[ ]` only
+- **Frontmatter is mandatory**: `stage: 4`, `pie: 1`, `slice: "1.4"`, `review: boundary`, `type: db-schema`, `mvp: true`, `depends_on: [1, 2, 3]`
+- **Checkboxes are `- [ ]` task-list items**, one per line, never a bare `[ ]`
 - **No platform-specific references** — use "project rules file" not "cursor rules"
 - **Do not invent entity definitions** — extract entity names and fields from PRD Section 4 only; if sparse, list the entities with a note to define fields during implementation
+- **DDL is the deliverable, application code is not.** Full table, column, constraint, index, and RLS policy definitions belong in this file. Query helpers, client wrappers, seed scripts beyond a one-line command, and test bodies do not; name them in prose and leave the bodies to the builder (same rule as `phased-plan-writer` "Code budget")
 - **Security baseline applies** — if Supabase, all tasks must be consistent with the RLS baseline in `references/architecture-conventions.md`
 
 ## Output contract

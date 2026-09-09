@@ -180,21 +180,21 @@ flowchart TD
 `cook-pizzas` produces `docs/plans/00_master_checklist.md` as a **two-level Pie / Slice roadmap** — **Pie 1 — Foundations** (tracked via the `## Prep` gate) then the feature Pies (2+):
 
 ```markdown
-## Prep — Pie 1: Foundations (run once before any feature work)
+## Prep (Pie 1 Foundations, run once before any feature work)
 
-[ ] Display case built       — run /bytheslice:set-display-case
-[ ] Quality line installed   — run /bytheslice:final-quality-check
-[ ] Shop open                — run /bytheslice:open-the-shop
-[ ] DB schema foundation     — run /bytheslice:sell-slice on Slice 1.x (if backend)
+- [ ] Display case built       : run /bytheslice:set-display-case
+- [ ] Quality line installed   : run /bytheslice:final-quality-check
+- [ ] Shop open                : run /bytheslice:open-the-shop
+- [ ] DB schema foundation     : run /bytheslice:sell-slice on Slice 1.x (if backend)
 
-## Pie 2 — Blog Editor    <!-- review: boundary -->
+## Pie 2: Blog Editor    <!-- review: boundary -->
 
-### Slice 2.6 — Build the Blog Editor frontend
-[ ] step
-[ ] step
+### Slice 2.6: Build the Blog Editor frontend
+- [ ] step
+- [ ] step
 
-### Slice 2.7 — Wire server actions into the editor
-[ ] step
+### Slice 2.7: Wire server actions into the editor
+- [ ] step
 ```
 
 A **Pie** is a coherent chapter of 3–8 slices; a **Slice** is one vertical deliverable. `/sell-slice`'s prep gate **refuses to start feature work until every Pie-1 / Prep box is `[x]`**. For the full hierarchy, caps, and how legacy flat-v4 / v3 checklists are handled, see [**Architecture & conventions**](#architecture--conventions).

@@ -26,9 +26,10 @@ bts_checklist_path() {
 }
 
 # Count Prep checkboxes. Prints "<done> <total>" (e.g. "2 5").
-# Accepts both checkbox forms: dashless "[ ]" (canonical v5 per
-# skills/cook-pizzas/references/templates.md "Checkbox format rule")
-# and dashed "- [ ]" (legacy v4 checklists).
+# Accepts both checkbox forms: dashed "- [ ]" (canonical GitHub task-list
+# form per skills/cook-pizzas/references/templates.md "Checkbox format rule")
+# and bare "[ ]" (legacy: checklists generated before 5.1.3 omitted the
+# list marker, which GitHub renders as running text rather than a list).
 # Empty output if no `## Prep` section is present.
 bts_prep_counts() {
   local checklist

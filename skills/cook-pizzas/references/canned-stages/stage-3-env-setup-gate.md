@@ -46,21 +46,21 @@ completion_criteria:
 
 ### Task 1: Create .env.example and document all required vars
 
-[ ] Create `.env.example` at the expected path(s) for the architecture variant:
+- [ ] Create `.env.example` at the expected path(s) for the architecture variant:
   - Single-app: `.env.example` at project root
   - Monorepo: `.env.example` per app + optional shared `.env.example`
 
-[ ] Document every required environment variable with:
+- [ ] Document every required environment variable with:
   - Name
   - Description
   - Where to get the value (e.g., "Supabase dashboard → Project Settings → API")
   - Whether it is public (`NEXT_PUBLIC_`) or server-only
 
 Env var groups to populate (project-specific list — from Q4/Q10/Q11 + PRD Section 4):
-[ ] Database connection (see Q4 tooling)
-[ ] Auth provider credentials (see Q10)
-[ ] Deployment platform vars (see Q11)
-[ ] Any additional integrations from PRD Section 4
+- [ ] Database connection (see Q4 tooling)
+- [ ] Auth provider credentials (see Q10)
+- [ ] Deployment platform vars (see Q11)
+- [ ] Any additional integrations from PRD Section 4
 
 **Commit:** `env: add .env.example with all required variables documented`
 
@@ -70,10 +70,10 @@ Env var groups to populate (project-specific list — from Q4/Q10/Q11 + PRD Sect
 
 > The orchestrator pauses here. The human must:
 
-[ ] Create accounts / projects for each external service
-[ ] Generate API keys and credentials
-[ ] Configure OAuth redirect URIs and allowed origins
-[ ] Populate `.env.local` (single-app) or per-app `.env.local` files (monorepo)
+- [ ] Create accounts / projects for each external service
+- [ ] Generate API keys and credentials
+- [ ] Configure OAuth redirect URIs and allowed origins
+- [ ] Populate `.env.local` (single-app) or per-app `.env.local` files (monorepo)
 
 Once all variables are populated, signal the orchestrator to continue.
 
@@ -81,11 +81,11 @@ Once all variables are populated, signal the orchestrator to continue.
 
 ### Task 3: Verify local dev boots
 
-[ ] Run `pnpm dev` (or equivalent); confirm no missing env var errors
-[ ] Confirm database connection succeeds (run a simple query)
-[ ] Confirm auth provider is reachable (check health endpoint or test sign-in)
-[ ] Confirm any additional services from PRD Section 4 are reachable
-[ ] Run `pnpm test` (or equivalent); confirm passing
+- [ ] Run `pnpm dev` (or equivalent); confirm no missing env var errors
+- [ ] Confirm database connection succeeds (run a simple query)
+- [ ] Confirm auth provider is reachable (check health endpoint or test sign-in)
+- [ ] Confirm any additional services from PRD Section 4 are reachable
+- [ ] Run `pnpm test` (or equivalent); confirm passing
 
 **Commit:** `env: verify all services reachable in local dev`
 

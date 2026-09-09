@@ -165,14 +165,14 @@ Recommended next: <empty | the deferred mvp:false Pies via /sell-pie | open Phas
 
 Walk this before reporting the roadmap done.
 
-[ ] Master checklist confirmed piefied (at least one `## Pie N`); a flat checklist was refused, not chained.
-[ ] Pie queue built and filtered correctly for the invoked mode (all / `mvp: true` only).
-[ ] Each queued Pie was delivered by a single `/sell-pie` dispatch — no slice baking or gating done in this skill.
-[ ] Every queued Pie returned `status: complete` with its PR `MERGED` and CI green on the merged head SHA.
-[ ] Between every Pie: clean tree, on `main`, synced with `origin/main`, no leftover pie branch or worktree.
-[ ] Any HITL bubbled by `/sell-pie` stopped the chain and was propagated via `needs_human` + `hitl_*` (never `ask_user_input_v0`).
-[ ] Deferred `mvp: false` Pies (in `--auto-mvp`) listed in the Final Report's "Recommended next".
-[ ] Final Report emitted.
+- [ ] Master checklist confirmed piefied (at least one `## Pie N`); a flat checklist was refused, not chained.
+- [ ] Pie queue built and filtered correctly for the invoked mode (all / `mvp: true` only).
+- [ ] Each queued Pie was delivered by a single `/sell-pie` dispatch — no slice baking or gating done in this skill.
+- [ ] Every queued Pie returned `status: complete` with its PR `MERGED` and CI green on the merged head SHA.
+- [ ] Between every Pie: clean tree, on `main`, synced with `origin/main`, no leftover pie branch or worktree.
+- [ ] Any HITL bubbled by `/sell-pie` stopped the chain and was propagated via `needs_human` + `hitl_*` (never `ask_user_input_v0`).
+- [ ] Deferred `mvp: false` Pies (in `--auto-mvp`) listed in the Final Report's "Recommended next".
+- [ ] Final Report emitted.
 
 ## Return contract
 

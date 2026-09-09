@@ -50,22 +50,22 @@ Expand the brief into a complete token set. For every required category, propose
 
 **Token category coverage required:**
 
-[ ] Surface Colors — 6 tokens × light/dark
-[ ] Brand Colors — 6 tokens × light/dark
-[ ] Semantic Colors — at minimum destructive pair × light/dark; propose optional semantic colors if brand brief implies them
-[ ] Neutrals — 5 tokens × light/dark
-[ ] Charts — 5 tokens × light/dark; colors must be perceptually distinct from each other
-[ ] Sidebar — 8 tokens × light/dark (only if `has_sidebar` is true)
-[ ] Typography — Font Families — propose font stack names (e.g., "Inter, ui-sans-serif, system-ui") based on brand personality; flag if custom fonts need to be installed
-[ ] Type Scale — propose Option A (size tokens) or Option B (semantic tokens) based on project type; document the choice
-[ ] Weights/Leading/Tracking — propose full scale values
-[ ] Radius — base value plus full derivative set; set base value to reflect brand personality (0 = sharp/technical, 0.5rem = balanced, 1rem+ = friendly/rounded)
-[ ] Spacing — state whether Tailwind default 4px-base scale is appropriate, or propose a custom scale if brief implies non-standard density
-[ ] Shadows — 5 shadow levels; calibrate intensity to brand personality (subtle for minimal/editorial, more expressive for consumer/playful)
-[ ] Motion — duration scale + easing curves; recommend snappier motion for data-heavy apps, more expressive motion for consumer products
-[ ] Breakpoints — recommend Tailwind defaults unless brief implies unusual device targets
-[ ] Z-index — propose named layer scale appropriate to the project's UI complexity
-[ ] Dark Mode — confirm every color token has a dark variant; flag any that are missing before surfacing the proposal
+- [ ] Surface Colors — 6 tokens × light/dark
+- [ ] Brand Colors — 6 tokens × light/dark
+- [ ] Semantic Colors — at minimum destructive pair × light/dark; propose optional semantic colors if brand brief implies them
+- [ ] Neutrals — 5 tokens × light/dark
+- [ ] Charts — 5 tokens × light/dark; colors must be perceptually distinct from each other
+- [ ] Sidebar — 8 tokens × light/dark (only if `has_sidebar` is true)
+- [ ] Typography — Font Families — propose font stack names (e.g., "Inter, ui-sans-serif, system-ui") based on brand personality; flag if custom fonts need to be installed
+- [ ] Type Scale — propose Option A (size tokens) or Option B (semantic tokens) based on project type; document the choice
+- [ ] Weights/Leading/Tracking — propose full scale values
+- [ ] Radius — base value plus full derivative set; set base value to reflect brand personality (0 = sharp/technical, 0.5rem = balanced, 1rem+ = friendly/rounded)
+- [ ] Spacing — state whether Tailwind default 4px-base scale is appropriate, or propose a custom scale if brief implies non-standard density
+- [ ] Shadows — 5 shadow levels; calibrate intensity to brand personality (subtle for minimal/editorial, more expressive for consumer/playful)
+- [ ] Motion — duration scale + easing curves; recommend snappier motion for data-heavy apps, more expressive motion for consumer products
+- [ ] Breakpoints — recommend Tailwind defaults unless brief implies unusual device targets
+- [ ] Z-index — propose named layer scale appropriate to the project's UI complexity
+- [ ] Dark Mode — confirm every color token has a dark variant; flag any that are missing before surfacing the proposal
 
 ### Phase 3 — Surface Proposal for User Approval
 

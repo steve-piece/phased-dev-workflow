@@ -18,8 +18,8 @@ This file is the **canonical source of truth** for hook behavior. Every row is o
 | `/sell-slice` | no `docs/plans/00_master_checklist.md` | **BLOCK** — "requires master checklist, run /cook-pizzas first" |
 | `/sell-slice` | checklist exists, all Prep `[x]`, clean tree | **PASS** |
 | `/sell-slice` | checklist exists, some Prep `[ ]` | **WARN** — "Prep section incomplete: N/M boxes checked" |
-| `/sell-slice` | checklist exists, Prep uses dashless `[ ]` boxes (canonical v5), all checked | **PASS**: dashless and legacy dashed `- [ ]` boxes are both counted |
-| `/sell-slice` | checklist exists, Prep mixes dashed `- [x]` and dashless `[ ]` boxes | **WARN** with both forms counted in the N/M totals |
+| `/sell-slice` | checklist exists, Prep uses legacy bare `[ ]` boxes (pre-5.1.3 output), all checked | **PASS**: canonical dashed `- [ ]` and legacy bare `[ ]` boxes are both counted |
+| `/sell-slice` | checklist exists, Prep mixes dashed `- [x]` and bare `[ ]` boxes | **WARN** with both forms counted in the N/M totals |
 | `/sell-slice` | checklist exists, dirty git tree | **WARN** — "working tree is dirty" |
 | `/box-it-up` | current branch is `main` or `master` | **BLOCK** — "refuses to run on main/master" |
 | `/box-it-up` | feature branch, no `gh auth` | **WARN** — "gh CLI not authenticated" |

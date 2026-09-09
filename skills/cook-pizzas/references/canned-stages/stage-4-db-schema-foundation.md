@@ -43,18 +43,18 @@ completion_criteria:
 
 ### Task 1: Define schema source of truth
 
-[ ] Create the schema file at the tooling-specific location:
+- [ ] Create the schema file at the tooling-specific location:
   - Supabase: `supabase/migrations/<timestamp>_initial_schema.sql`
   - Prisma: `prisma/schema.prisma`
   - Drizzle: `db/schema.ts`
 
-[ ] Define ALL entities detected from PRD Section 4:
+- [ ] Define ALL entities detected from PRD Section 4:
   - Table/model names
   - Fields with data types and constraints
   - Foreign key relationships
   - Indexes (primary key, unique, foreign key, query-critical indexes)
 
-[ ] Apply the migration / push the schema:
+- [ ] Apply the migration / push the schema:
   - Supabase: `supabase db push` or `supabase migration apply`
   - Prisma: `prisma migrate dev --name initial_schema`
   - Drizzle: `drizzle-kit push` or `drizzle-kit generate && drizzle-kit migrate`
@@ -65,13 +65,13 @@ completion_criteria:
 
 ### Task 2: Generate TypeScript types
 
-[ ] Run the type generation command:
+- [ ] Run the type generation command:
   - Supabase: `supabase gen types typescript --local > types/supabase.ts`
   - Prisma: `prisma generate` (generates Prisma client + types)
   - Drizzle: types are inferred from schema; export from `db/schema.ts`
 
-[ ] Verify generated types are importable and correct (write a minimal type-check script)
-[ ] Commit generated type file if it's not gitignored
+- [ ] Verify generated types are importable and correct (write a minimal type-check script)
+- [ ] Commit generated type file if it's not gitignored
 
 **Commit:** `db: generate TypeScript types from schema`
 
@@ -81,10 +81,10 @@ completion_criteria:
 
 > Reference: `references/architecture-conventions.md` — Security baseline — Supabase
 
-[ ] Enable RLS on every user-scoped table (`ALTER TABLE <table> ENABLE ROW LEVEL SECURITY`)
-[ ] Write at least one RLS policy per table for each operation (SELECT, INSERT, UPDATE, DELETE) that user-scoped clients will perform
-[ ] Verify service-role key is NOT referenced in any client-side file
-[ ] Verify all database functions invoked by user-scoped clients use `SECURITY DEFINER` with `SET search_path = ''`
+- [ ] Enable RLS on every user-scoped table (`ALTER TABLE <table> ENABLE ROW LEVEL SECURITY`)
+- [ ] Write at least one RLS policy per table for each operation (SELECT, INSERT, UPDATE, DELETE) that user-scoped clients will perform
+- [ ] Verify service-role key is NOT referenced in any client-side file
+- [ ] Verify all database functions invoked by user-scoped clients use `SECURITY DEFINER` with `SET search_path = ''`
 
 **Commit:** `security: enable RLS and write initial policies for all user-scoped tables`
 
@@ -92,13 +92,13 @@ completion_criteria:
 
 ### Task 4: Seed data for development
 
-[ ] Write a seed script at `db/seed/` (or equivalent tooling path) with:
+- [ ] Write a seed script at `db/seed/` (or equivalent tooling path) with:
   - At least 2 test users per role (if auth is in scope)
   - Representative sample data for each entity (at least 5 rows per major entity)
   - Seed data that exercises relationship constraints
 
-[ ] Verify seed script runs cleanly on a fresh schema
-[ ] Document how to reset and re-seed in project README or docs
+- [ ] Verify seed script runs cleanly on a fresh schema
+- [ ] Document how to reset and re-seed in project README or docs
 
 **Commit:** `db: add seed script for development and testing`
 

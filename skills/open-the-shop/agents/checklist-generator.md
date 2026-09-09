@@ -67,7 +67,7 @@ hitl_context: null | "<what triggered this>"
 ## Hard Constraints
 
 - **Always read both reference files.** Never invent service mappings or console URLs.
-- **Use `[ ]` checkbox format** — not `- [ ]`. The orchestrator displays this verbatim to the user.
+- **Use `- [ ]` task-list checkboxes**, one per line, never a bare `[ ]`. The orchestrator displays this verbatim to the user.
 - **Group keys by service in the catalog's order** — don't sort alphabetically.
 - **Unknown-keyed services** still appear in the checklist under "Other / Unknown" so they aren't silently dropped.
 - **Never include the actual key values** — only key names. The template repository keeps `.env.example` files with placeholders only.

@@ -200,21 +200,21 @@ This skill does NOT call `ask_user_input_v0` for HITL resolution — it bubbles 
 
 ## Completion Checklist
 
-[ ] Scope determined (last N stages, last project, or specific skill)
-[ ] Plugin path resolved (`BYTHESLICE_PLUGIN_PATH` checked first, then `~/bytheslice`)
-[ ] `gh` CLI authentication verified before attempting any PR creation
-[ ] Execution data gathered: stage files, git log, recent PRs, HITL escalation records
-[ ] `retrospective-reviewer` (opus) dispatched with all gathered data
-[ ] `patterns_observed` and `proposed_changes` received from `retrospective-reviewer`
-[ ] Self-modification guard applied — no proposals targeting `skills/close-shop/` or `commands/close-shop.md`
-[ ] Proposals surfaced to user with clear summary
-[ ] User confirmed PR or elected to save locally
-[ ] If PR: branch name follows `retrospective/<yyyy-mm-dd>-<topic>` format
-[ ] If PR: opened as draft (never ready-for-review)
-[ ] If PR: labeled `retrospective` and `experimental`
-[ ] If PR: body includes patterns observed, proposed changes summary, and project link
-[ ] Duplicate PR guard checked (max 1 open retrospective PR per project per week)
-[ ] If save locally: proposals written to `docs/close-shop-<yyyy-mm-dd>.md`
-[ ] Return contract YAML emitted
-[ ] No `- [ ]` checkbox syntax used in any output — only `[ ]`
-[ ] No platform-specific bare references ("cursor rules", "claude rules") in any output
+- [ ] Scope determined (last N stages, last project, or specific skill)
+- [ ] Plugin path resolved (`BYTHESLICE_PLUGIN_PATH` checked first, then `~/bytheslice`)
+- [ ] `gh` CLI authentication verified before attempting any PR creation
+- [ ] Execution data gathered: stage files, git log, recent PRs, HITL escalation records
+- [ ] `retrospective-reviewer` (opus) dispatched with all gathered data
+- [ ] `patterns_observed` and `proposed_changes` received from `retrospective-reviewer`
+- [ ] Self-modification guard applied — no proposals targeting `skills/close-shop/` or `commands/close-shop.md`
+- [ ] Proposals surfaced to user with clear summary
+- [ ] User confirmed PR or elected to save locally
+- [ ] If PR: branch name follows `retrospective/<yyyy-mm-dd>-<topic>` format
+- [ ] If PR: opened as draft (never ready-for-review)
+- [ ] If PR: labeled `retrospective` and `experimental`
+- [ ] If PR: body includes patterns observed, proposed changes summary, and project link
+- [ ] Duplicate PR guard checked (max 1 open retrospective PR per project per week)
+- [ ] If save locally: proposals written to `docs/close-shop-<yyyy-mm-dd>.md`
+- [ ] Return contract YAML emitted
+- [ ] Every checkbox in any output is a `- [ ]` task-list item (no bare `[ ]` lines)
+- [ ] No platform-specific bare references ("cursor rules", "claude rules") in any output

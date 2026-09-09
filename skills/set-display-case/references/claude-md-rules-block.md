@@ -79,7 +79,7 @@ If no code-pattern questions were answered, the subsection heading and its block
 
 ## Formatting Rules for the Appended Block
 
-1. **Checkbox syntax:** use `[ ]` only — never `- [ ]`.
+1. **Checkbox syntax:** GitHub task-list items, `- [ ]` and `- [x]`, one per line. Never a bare `[ ]` without the list marker, since that renders as plain text.
 2. **No platform-specific bare references:** write "project rules file" rather than "cursor rules" or "claude rules."
 3. **No model version pinning** in any content derived from this template.
 4. **No hardcoded values** in the token catalog path — always `docs/design-system.md`.

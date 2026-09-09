@@ -39,13 +39,13 @@ Make executable: `chmod +x .husky/pre-push`.
 
 ## CI/CD checklist
 
-[ ] E2E test added or updated for every changed behavior
-[ ] `@regression-core` suite still passes locally
-[ ] `@visual` baselines reviewed (approve or update before merge)
-[ ] No design-system-compliance violations (`pnpm check:design-system` green)
-[ ] No existing CI workflow jobs removed or weakened
-[ ] Husky `pre-push` hook ran green locally
-[ ] If any DB code touched: `db/schema.sql` (or equivalent declarative schema) updated first
+- [ ] E2E test added or updated for every changed behavior
+- [ ] `@regression-core` suite still passes locally
+- [ ] `@visual` baselines reviewed (approve or update before merge)
+- [ ] No design-system-compliance violations (`pnpm check:design-system` green)
+- [ ] No existing CI workflow jobs removed or weakened
+- [ ] Husky `pre-push` hook ran green locally
+- [ ] If any DB code touched: `db/schema.sql` (or equivalent declarative schema) updated first
 ```
 
 ---

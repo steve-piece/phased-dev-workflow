@@ -47,7 +47,7 @@ completion_criteria:
 
 ### Task 1: Establish token categories
 
-[ ] Define values for ALL of the following token categories. Every category is mandatory — no skipping.
+- [ ] Define values for ALL of the following token categories. Every category is mandatory — no skipping.
 
 **Color tokens:**
 - `--color-brand-primary`
@@ -96,10 +96,10 @@ completion_criteria:
 
 ### Task 2: Configure component library baseline
 
-[ ] Install and configure the primary component library (shadcn, Radix, or per project stack)
-[ ] Apply token values to the component library configuration
-[ ] Verify focus rings, hit targets, and color contrast meet the baseline in `references/architecture-conventions.md`
-[ ] Test dark mode token variants if in scope (check PRD Section 5)
+- [ ] Install and configure the primary component library (shadcn, Radix, or per project stack)
+- [ ] Apply token values to the component library configuration
+- [ ] Verify focus rings, hit targets, and color contrast meet the baseline in `references/architecture-conventions.md`
+- [ ] Test dark mode token variants if in scope (check PRD Section 5)
 
 **Commit:** `design: configure component library with project tokens`
 
@@ -107,12 +107,12 @@ completion_criteria:
 
 ### Task 3: Document token usage patterns
 
-[ ] Write `docs/design-system.md` with:
+- [ ] Write `docs/design-system.md` with:
   - Token reference table
   - Which component library is in use and why
   - How to add a new token (process, naming convention)
   - Semantic color usage guide (when to use `--color-semantic-error` vs `--color-brand-primary`)
-[ ] If design MCP available: document how to reference the MCP for component generation
+- [ ] If design MCP available: document how to reference the MCP for component generation
 
 **Commit:** `docs: design system token reference and usage guide`
 
@@ -120,10 +120,10 @@ completion_criteria:
 
 ### Task 4: Smoke-test the design system
 
-[ ] Render a test page with: heading, body text, primary button, secondary button, input field, error state, success badge
-[ ] Verify all tokens resolve correctly (no `var(--color-undefined)` fallbacks)
-[ ] Verify `prefers-reduced-motion` is respected by at least one animated element
-[ ] Verify color contrast on primary and secondary text meets WCAG AA (4.5:1 for normal text)
+- [ ] Render a test page with: heading, body text, primary button, secondary button, input field, error state, success badge
+- [ ] Verify all tokens resolve correctly (no `var(--color-undefined)` fallbacks)
+- [ ] Verify `prefers-reduced-motion` is respected by at least one animated element
+- [ ] Verify color contrast on primary and secondary text meets WCAG AA (4.5:1 for normal text)
 
 **Commit:** `test: design system smoke test page`
 

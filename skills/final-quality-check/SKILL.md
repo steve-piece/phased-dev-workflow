@@ -143,7 +143,7 @@ The reported score is recorded as context only. It is heavily penalized by delib
 The orchestrator (no subagent dispatch — this is a small, deterministic write similar to sub-block D's PR template):
 
 1. Locate the project rules file. If `cook-pizzas` ran first, the file already exists at `CLAUDE.md` or `AGENTS.md` per Q12, with a placeholder section labeled "CI/CD Operational Rules — populated by `final-quality-check`" written by the `rules-assembler` agent.
-2. If the placeholder is present, replace its body with the contents of `references/prd-ci-cd-checklist.md` (preserving the `[ ]` checkbox format verbatim — these are runtime gates the user and every agent walk on every PR, not one-time scaffold checks).
+2. If the placeholder is present, replace its body with the contents of `references/prd-ci-cd-checklist.md` (preserving the `- [ ]` task-list checkbox format verbatim: these are runtime gates the user and every agent walk on every PR, not one-time scaffold checks).
 3. If the placeholder is absent (e.g. the project skipped `cook-pizzas` and ran `/final-quality-check` directly as an escape hatch), append a new section to the project rules file:
    ```markdown
    <!-- bytheslice: ci-cd-operational-rules-start -->
@@ -222,81 +222,81 @@ Run this checklist at the end of every run. Do **not** consider the scaffold "do
 
 ### 1. Scaffold Artifacts Present
 
-[ ] `.husky/pre-push` exists and is executable (includes `check:design-system` in gate chain).
-[ ] `.github/pull_request_template.md` exists with E2E attestation, design-system-compliance, and visual-diff checklist items.
-[ ] `.github/workflows/ci.yml` exists (full job order: typecheck → lint → design-system-compliance → unit tests → integration tests → @feature → @regression-core → @visual → db-schema-drift if applicable → build).
-[ ] `.github/workflows/design-system-compliance.yml` exists (regex sweep → eslint-plugin-tailwindcss → stylelint).
-[ ] `.github/workflows/e2e.yml` exists (`@feature` + `@regression-core` + `@visual` jobs with artifact upload on failure).
-[ ] `.github/workflows/e2e-coverage.yml` exists (path-diff job named `E2E / coverage-check`; blocks on unreviewed visual diffs).
-[ ] `.github/workflows/db-schema-drift.yml` exists IF project has DB, is absent if no DB detected.
-[ ] `scripts/setup-branch-protection.sh` exists and is executable (includes all new required checks).
-[ ] `.eslintrc.json` (or equivalent) has `eslint-plugin-tailwindcss` config additions.
-[ ] `.stylelintrc.json` exists with CSS-file token checks.
-[ ] `.gitignore` excludes `playwright-report/`, `test-results/`, `.playwright/`, and Vizzly diff artifacts.
-[ ] Project rules file (`CLAUDE.md` or `AGENTS.md`) has a "CI/CD Operational Rules" section populated verbatim from `references/prd-ci-cd-checklist.md`, delimited by the `<!-- bytheslice: ci-cd-operational-rules-{start,end} -->` markers, so every later stage skill picks up the runtime guardrails automatically.
-[ ] That same section carries the shadscan triage rules (score is never a gate, every finding is a lead, the three false-positive classes, discard library-showcase paths).
-[ ] No `--fail-under`, no `shadscan` step, and no `shadscan setup` hook appears anywhere in `.husky/pre-push`, `.github/workflows/*`, or `scripts/setup-branch-protection.sh`. Grep to confirm.
+- [ ] `.husky/pre-push` exists and is executable (includes `check:design-system` in gate chain).
+- [ ] `.github/pull_request_template.md` exists with E2E attestation, design-system-compliance, and visual-diff checklist items.
+- [ ] `.github/workflows/ci.yml` exists (full job order: typecheck → lint → design-system-compliance → unit tests → integration tests → @feature → @regression-core → @visual → db-schema-drift if applicable → build).
+- [ ] `.github/workflows/design-system-compliance.yml` exists (regex sweep → eslint-plugin-tailwindcss → stylelint).
+- [ ] `.github/workflows/e2e.yml` exists (`@feature` + `@regression-core` + `@visual` jobs with artifact upload on failure).
+- [ ] `.github/workflows/e2e-coverage.yml` exists (path-diff job named `E2E / coverage-check`; blocks on unreviewed visual diffs).
+- [ ] `.github/workflows/db-schema-drift.yml` exists IF project has DB, is absent if no DB detected.
+- [ ] `scripts/setup-branch-protection.sh` exists and is executable (includes all new required checks).
+- [ ] `.eslintrc.json` (or equivalent) has `eslint-plugin-tailwindcss` config additions.
+- [ ] `.stylelintrc.json` exists with CSS-file token checks.
+- [ ] `.gitignore` excludes `playwright-report/`, `test-results/`, `.playwright/`, and Vizzly diff artifacts.
+- [ ] Project rules file (`CLAUDE.md` or `AGENTS.md`) has a "CI/CD Operational Rules" section populated verbatim from `references/prd-ci-cd-checklist.md`, delimited by the `<!-- bytheslice: ci-cd-operational-rules-{start,end} -->` markers, so every later stage skill picks up the runtime guardrails automatically.
+- [ ] That same section carries the shadscan triage rules (score is never a gate, every finding is a lead, the three false-positive classes, discard library-showcase paths).
+- [ ] No `--fail-under`, no `shadscan` step, and no `shadscan setup` hook appears anywhere in `.husky/pre-push`, `.github/workflows/*`, or `scripts/setup-branch-protection.sh`. Grep to confirm.
 
 ### 2. Test Suites and Scripts Present
 
-[ ] `package.json` (root) has scripts: `test:e2e`, `test:e2e:feature`, `test:e2e:regression`, `test:e2e:visual`, `check:design-system`.
-[ ] At least one `@feature`-tagged smoke spec exists.
-[ ] At least one `@regression-core`-tagged sentinel spec exists.
-[ ] Canary `@visual` tests exist — one per viewport (375 / 768 / 1280 / 1920).
-[ ] `tests/visual/baselines/` directory is committed (may be empty on first scaffold; Vizzly populates on first run).
-[ ] Playwright (or detected E2E framework) is installed and lockfile updated.
-[ ] If a monorepo task runner exists (`turbo.json` / `nx.json`), the new E2E tasks are wired into it.
+- [ ] `package.json` (root) has scripts: `test:e2e`, `test:e2e:feature`, `test:e2e:regression`, `test:e2e:visual`, `check:design-system`.
+- [ ] At least one `@feature`-tagged smoke spec exists.
+- [ ] At least one `@regression-core`-tagged sentinel spec exists.
+- [ ] Canary `@visual` tests exist — one per viewport (375 / 768 / 1280 / 1920).
+- [ ] `tests/visual/baselines/` directory is committed (may be empty on first scaffold; Vizzly populates on first run).
+- [ ] Playwright (or detected E2E framework) is installed and lockfile updated.
+- [ ] If a monorepo task runner exists (`turbo.json` / `nx.json`), the new E2E tasks are wired into it.
 
 ### 3. Local Gates Green
 
-[ ] `pnpm lint` (or detected equivalent) passes.
-[ ] `pnpm typecheck` passes.
-[ ] `pnpm check:design-system` passes.
-[ ] `pnpm test` (unit/integration) passes.
-[ ] `pnpm test:e2e:feature` passes locally.
-[ ] `pnpm test:e2e:regression` passes locally.
-[ ] `pnpm test:e2e:visual` passes locally (baselines generated or confirmed up-to-date).
-[ ] Husky `pre-push` hook fires on push (verify with a dry-run or trial push).
+- [ ] `pnpm lint` (or detected equivalent) passes.
+- [ ] `pnpm typecheck` passes.
+- [ ] `pnpm check:design-system` passes.
+- [ ] `pnpm test` (unit/integration) passes.
+- [ ] `pnpm test:e2e:feature` passes locally.
+- [ ] `pnpm test:e2e:regression` passes locally.
+- [ ] `pnpm test:e2e:visual` passes locally (baselines generated or confirmed up-to-date).
+- [ ] Husky `pre-push` hook fires on push (verify with a dry-run or trial push).
 
 ### 3.5 Accessibility Discovery Pass (non-blocking)
 
 Every box here is about the pass having *run and been reported honestly*. None of them is about the pass having *passed*, because there is nothing to pass.
 
-[ ] `a11y-discovery-runner` was dispatched after sub-block E, or its `skipped` status and reason are recorded.
-[ ] Exactly two scoped commands were run: `--category accessibility` and `--category foundation`. No unscoped run, no `states` / `interaction` / `forms`.
-[ ] `--apply` was never run. `--fail-under` was never run. `shadscan setup` was never run.
-[ ] Findings whose path contains the library showcase route were discarded, and the discarded count is stated in the report.
-[ ] The stage report has an "Accessibility discovery pass (shadscan): UNVERIFIED LEADS" section, with each lead carrying shadscan's own evidence text and a `known_fp_class` tag.
-[ ] The reported score appears only as informational context, never compared against a threshold.
-[ ] No shadscan finding was auto-fixed, and no shadscan finding blocked the run.
+- [ ] `a11y-discovery-runner` was dispatched after sub-block E, or its `skipped` status and reason are recorded.
+- [ ] Exactly two scoped commands were run: `--category accessibility` and `--category foundation`. No unscoped run, no `states` / `interaction` / `forms`.
+- [ ] `--apply` was never run. `--fail-under` was never run. `shadscan setup` was never run.
+- [ ] Findings whose path contains the library showcase route were discarded, and the discarded count is stated in the report.
+- [ ] The stage report has an "Accessibility discovery pass (shadscan): UNVERIFIED LEADS" section, with each lead carrying shadscan's own evidence text and a `known_fp_class` tag.
+- [ ] The reported score appears only as informational context, never compared against a threshold.
+- [ ] No shadscan finding was auto-fixed, and no shadscan finding blocked the run.
 
 ### 4. PR Created and Submitted
 
-[ ] All work happened on branch `chore/final-quality-check` — never on `main`.
-[ ] PR opened via `git-commit-push-pr` / `new-branch-and-pr` skill or `gh pr create`.
-[ ] PR description lists every artifact created.
-[ ] PR is targeted at `main` and is **not** draft.
+- [ ] All work happened on branch `chore/final-quality-check` — never on `main`.
+- [ ] PR opened via `git-commit-push-pr` / `new-branch-and-pr` skill or `gh pr create`.
+- [ ] PR description lists every artifact created.
+- [ ] PR is targeted at `main` and is **not** draft.
 
 ### 5. CI/CD Passing on the PR
 
-[ ] All required GitHub Actions checks have completed (no `pending` / `queued`).
-[ ] Every required check is green. No skipped checks counted as passing.
-[ ] If any check failed: read failing job logs, patch on `chore/final-quality-check`, push, repeat until all checks pass.
-[ ] Final CI run reflects the latest commit on the PR head, not a stale SHA.
+- [ ] All required GitHub Actions checks have completed (no `pending` / `queued`).
+- [ ] Every required check is green. No skipped checks counted as passing.
+- [ ] If any check failed: read failing job logs, patch on `chore/final-quality-check`, push, repeat until all checks pass.
+- [ ] Final CI run reflects the latest commit on the PR head, not a stale SHA.
 
 ### 6. Branch Cleanup and Return to Main
 
 Only after CI is fully green and the PR is merged.
 
-[ ] PR merged into `main`.
-[ ] Local `main` updated: `git checkout main && git pull --ff-only origin main`.
-[ ] Confirm scaffold commits are present on `main` (`git log --oneline | head`).
-[ ] Local `chore/final-quality-check` branch deleted: `git branch -d chore/final-quality-check`.
-[ ] Remote `chore/final-quality-check` deleted: `git push origin --delete chore/final-quality-check` (skip if auto-deleted).
-[ ] If a worktree was used: `git worktree remove <path>` and `git worktree prune`.
-[ ] Final `git status` shows clean tree on `main`.
-[ ] User reminded once to run `scripts/setup-branch-protection.sh`.
-[ ] If invoked as a `type: ci-cd` stage by `sell-slice`, `docs/plans/00_master_checklist.md` row flipped to `Completed`.
+- [ ] PR merged into `main`.
+- [ ] Local `main` updated: `git checkout main && git pull --ff-only origin main`.
+- [ ] Confirm scaffold commits are present on `main` (`git log --oneline | head`).
+- [ ] Local `chore/final-quality-check` branch deleted: `git branch -d chore/final-quality-check`.
+- [ ] Remote `chore/final-quality-check` deleted: `git push origin --delete chore/final-quality-check` (skip if auto-deleted).
+- [ ] If a worktree was used: `git worktree remove <path>` and `git worktree prune`.
+- [ ] Final `git status` shows clean tree on `main`.
+- [ ] User reminded once to run `scripts/setup-branch-protection.sh`.
+- [ ] If invoked as a `type: ci-cd` stage by `sell-slice`, `docs/plans/00_master_checklist.md` row flipped to `Completed`.
 
 ### Done Criteria
 

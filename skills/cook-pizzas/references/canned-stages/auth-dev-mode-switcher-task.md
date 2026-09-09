@@ -11,7 +11,7 @@ This task is injected into any stage detected as auth-tagged by `phased-plan-wri
 
 ## Task to inject verbatim
 
-[ ] **Dev-mode auth helpers (localhost only)** — both sub-bullets ship together
+- [ ] **Dev-mode auth helpers (localhost only)** — both sub-bullets ship together
     - **Localhost auto-login** (opt-in via env flag)
         - Active ONLY when `process.env.NODE_ENV === 'development'` AND `process.env.DEV_AUTH_BYPASS === 'true'` — both required
         - With the flag unset or `false`, the real login flow runs unchanged so devs can exercise the actual auth UI locally

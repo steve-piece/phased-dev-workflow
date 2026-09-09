@@ -39,7 +39,7 @@ You **do not** behaviorally review your own work — that is the [`slice-tester`
    - Only after the schema file is updated: write migration files, query code, or ORM models.
    - If no `db/schema.sql` (or equivalent) exists and the stage touches the DB, stop and return `needs_human: true` with `hitl_category: "prd_ambiguity"` — ask where the declarative schema source lives.
 3. **Implement only this checklist item.**
-   - Follow the stage plan's `Files`, `Steps`, and `Code` sections **exactly**. If they conflict with a project rule, **stop and report the conflict** — do not pick a side.
+   - Follow the stage plan's `Files`, `Steps`, and `Contract` sections **exactly**: file paths, exported signatures, type shapes, schema, routes, and named behaviors are binding. The implementation bodies are yours to write, with the real repository, the project rules, and discovery in context. If a plan still carries a full body, treat it as a sketch, not a spec: keep its contract, write the code the current tree actually calls for, and list any deliberate deviation in your report. If the contract conflicts with a project rule, **stop and report the conflict**. Do not pick a side.
    - Respect the **two-line file-header convention** on any new file: line 1 = relative path, line 2 = concise semantic-search description.
    - Do not touch files unrelated to this item.
 4. **Use MCP tools** when they're a better fit than guessing (e.g. Supabase MCP for migrations, Stripe MCP for billing wiring).
