@@ -18,11 +18,11 @@
 
 > Provisioning console: [URL]
 
-[ ] Create a [Service Name] project / account at [URL]
-[ ] Copy the following keys to `apps/<app>/.env.local`:
+- [ ] Create a [Service Name] project / account at [URL]
+- [ ] Copy the following keys to `apps/<app>/.env.local`:
     - `KEY_1`
     - `KEY_2`
-[ ] Add the following as GitHub repository secrets (Settings → Secrets and variables → Actions):
+- [ ] Add the following as GitHub repository secrets (Settings → Secrets and variables → Actions):
     - `KEY_1` — needed by `.github/workflows/<workflow>.yml`
 
 ---
@@ -31,11 +31,11 @@
 
 > Provisioning console: [URL]
 
-[ ] Create a [Service Name] project / account at [URL]
-[ ] Copy the following keys to `apps/<app>/.env.local`:
+- [ ] Create a [Service Name] project / account at [URL]
+- [ ] Copy the following keys to `apps/<app>/.env.local`:
     - `KEY_A`
     - `KEY_B`
-[ ] (No GitHub secrets needed for this service)
+- [ ] (No GitHub secrets needed for this service)
 
 ---
 
@@ -46,18 +46,18 @@
 >
 > After adding all secrets, confirm below.
 
-[ ] `KEY_1` — used by `.github/workflows/ci.yml`
-[ ] `KEY_2` — used by `.github/workflows/e2e.yml`
-[ ] All GitHub repository secrets confirmed added
+- [ ] `KEY_1` — used by `.github/workflows/ci.yml`
+- [ ] `KEY_2` — used by `.github/workflows/e2e.yml`
+- [ ] All GitHub repository secrets confirmed added
 
 ---
 
 ## Final Confirmation
 
-[ ] All `.env.local` files created (one per app / package that has a `.env.example`)
-[ ] All secret values are real (not placeholder strings like `xxx`, `your_key_here`, or `<placeholder>`)
-[ ] `.env.local` is listed in `.gitignore` (never commit secrets)
-[ ] GitHub repository secrets added for CI workflows (or confirmed not needed)
+- [ ] All `.env.local` files created (one per app / package that has a `.env.example`)
+- [ ] All secret values are real (not placeholder strings like `xxx`, `your_key_here`, or `<placeholder>`)
+- [ ] `.env.local` is listed in `.gitignore` (never commit secrets)
+- [ ] GitHub repository secrets added for CI workflows (or confirmed not needed)
 
 ---
 
@@ -74,6 +74,6 @@
      Sentry → Vercel → GitHub → OpenAI → Anthropic → Other.
   7. Omit any service section if zero keys from that service were detected.
   8. Omit the "GitHub Secrets" section if no CI workflow secrets were detected.
-  9. Checkboxes MUST be [ ] with NO leading dash. Example: [ ] Do this thing.
-     Do NOT write: - [ ] Do this thing.
+  9. Checkboxes MUST be task-list items: a leading dash, then the box. Example: - [ ] Do this thing.
+     Do NOT write a bare box: [ ] Do this thing. (It renders as plain text, not a list.)
 -->

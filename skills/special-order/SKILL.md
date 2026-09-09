@@ -280,17 +280,17 @@ Then return.
 
 ## Completion Checklist
 
-[ ] Detection ran and announced the chosen path
-[ ] (Path A only) Phase 0 orientation complete (master checklist read, recent stages scanned, git state clean)
-[ ] (Path A only) Plan-mode question gate ran (Q-features, Q-relationship, Q-conventions, Q-mvp-band, Q-pr-style)
-[ ] (Path A only) Complexity assessor dispatched and returned
-[ ] (Path A only) Assessment surfaced to user; user authorization received
-[ ] (Path A only) phased-plan-writer dispatched once per new stage (incremental mode)
-[ ] (Path A only) Master checklist updated with new stage rows (existing rows untouched)
-[ ] (Path A only) New plan files + master-checklist update committed on a `chore/add-stages-<lo>-<hi>` branch (no push, no PR — handed off to `/bytheslice:box-it-up`)
-[ ] (Path A only) Handoff message printed with the three next-step options (`/box-it-up` for plan-only chore PR / direct `/sell-slice` / `/run-the-day` for batch)
-[ ] (Path B only) HITL bubble surfaced; user redirected to /bytheslice:setup-shop
-[ ] (Path C only) HITL bubble surfaced; user redirected to /bytheslice:setup-shop for bootstrap
+- [ ] Detection ran and announced the chosen path
+- [ ] (Path A only) Phase 0 orientation complete (master checklist read, recent stages scanned, git state clean)
+- [ ] (Path A only) Plan-mode question gate ran (Q-features, Q-relationship, Q-conventions, Q-mvp-band, Q-pr-style)
+- [ ] (Path A only) Complexity assessor dispatched and returned
+- [ ] (Path A only) Assessment surfaced to user; user authorization received
+- [ ] (Path A only) phased-plan-writer dispatched once per new stage (incremental mode)
+- [ ] (Path A only) Master checklist updated with new stage rows (existing rows untouched)
+- [ ] (Path A only) New plan files + master-checklist update committed on a `chore/add-stages-<lo>-<hi>` branch (no push, no PR — handed off to `/bytheslice:box-it-up`)
+- [ ] (Path A only) Handoff message printed with the three next-step options (`/box-it-up` for plan-only chore PR / direct `/sell-slice` / `/run-the-day` for batch)
+- [ ] (Path B only) HITL bubble surfaced; user redirected to /bytheslice:setup-shop
+- [ ] (Path C only) HITL bubble surfaced; user redirected to /bytheslice:setup-shop for bootstrap
 
 ---
 

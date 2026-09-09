@@ -58,121 +58,121 @@ For each category in `token-checklist.md`, check the following. Record pass/fail
 
 **Surface Colors (required)**
 
-[ ] `--background` in `:root` and `.dark`
-[ ] `--foreground` in `:root` and `.dark`
-[ ] `--card` in `:root` and `.dark`
-[ ] `--card-foreground` in `:root` and `.dark`
-[ ] `--popover` in `:root` and `.dark`
-[ ] `--popover-foreground` in `:root` and `.dark`
+- [ ] `--background` in `:root` and `.dark`
+- [ ] `--foreground` in `:root` and `.dark`
+- [ ] `--card` in `:root` and `.dark`
+- [ ] `--card-foreground` in `:root` and `.dark`
+- [ ] `--popover` in `:root` and `.dark`
+- [ ] `--popover-foreground` in `:root` and `.dark`
 
 **Brand Colors (required)**
 
-[ ] `--primary` in `:root` and `.dark`
-[ ] `--primary-foreground` in `:root` and `.dark`
-[ ] `--secondary` in `:root` and `.dark`
-[ ] `--secondary-foreground` in `:root` and `.dark`
-[ ] `--accent` in `:root` and `.dark`
-[ ] `--accent-foreground` in `:root` and `.dark`
+- [ ] `--primary` in `:root` and `.dark`
+- [ ] `--primary-foreground` in `:root` and `.dark`
+- [ ] `--secondary` in `:root` and `.dark`
+- [ ] `--secondary-foreground` in `:root` and `.dark`
+- [ ] `--accent` in `:root` and `.dark`
+- [ ] `--accent-foreground` in `:root` and `.dark`
 
 **Semantic Colors (partial required)**
 
-[ ] `--destructive` in `:root` and `.dark` (required)
-[ ] `--destructive-foreground` in `:root` and `.dark` (required)
-[ ] Note which optional semantic tokens are present (success, warning, info pairs)
+- [ ] `--destructive` in `:root` and `.dark` (required)
+- [ ] `--destructive-foreground` in `:root` and `.dark` (required)
+- [ ] Note which optional semantic tokens are present (success, warning, info pairs)
 
 **Neutrals (required)**
 
-[ ] `--muted` in `:root` and `.dark`
-[ ] `--muted-foreground` in `:root` and `.dark`
-[ ] `--border` in `:root` and `.dark`
-[ ] `--input` in `:root` and `.dark`
-[ ] `--ring` in `:root` and `.dark`
+- [ ] `--muted` in `:root` and `.dark`
+- [ ] `--muted-foreground` in `:root` and `.dark`
+- [ ] `--border` in `:root` and `.dark`
+- [ ] `--input` in `:root` and `.dark`
+- [ ] `--ring` in `:root` and `.dark`
 
 **Charts (required — minimum 5)**
 
-[ ] `--chart-1` through `--chart-5` each in `:root` and `.dark`
+- [ ] `--chart-1` through `--chart-5` each in `:root` and `.dark`
 
 **Sidebar (required only if `has_sidebar` is true)**
 
-[ ] `--sidebar` in `:root` and `.dark`
-[ ] `--sidebar-foreground` in `:root` and `.dark`
-[ ] `--sidebar-primary` in `:root` and `.dark`
-[ ] `--sidebar-primary-foreground` in `:root` and `.dark`
-[ ] `--sidebar-accent` in `:root` and `.dark`
-[ ] `--sidebar-accent-foreground` in `:root` and `.dark`
-[ ] `--sidebar-border` in `:root` and `.dark`
-[ ] `--sidebar-ring` in `:root` and `.dark`
+- [ ] `--sidebar` in `:root` and `.dark`
+- [ ] `--sidebar-foreground` in `:root` and `.dark`
+- [ ] `--sidebar-primary` in `:root` and `.dark`
+- [ ] `--sidebar-primary-foreground` in `:root` and `.dark`
+- [ ] `--sidebar-accent` in `:root` and `.dark`
+- [ ] `--sidebar-accent-foreground` in `:root` and `.dark`
+- [ ] `--sidebar-border` in `:root` and `.dark`
+- [ ] `--sidebar-ring` in `:root` and `.dark`
 
 **Typography — Font Families (required)**
 
-[ ] `--font-sans` in `:root`
-[ ] `--font-serif` in `:root`
-[ ] `--font-mono` in `:root`
+- [ ] `--font-sans` in `:root`
+- [ ] `--font-serif` in `:root`
+- [ ] `--font-mono` in `:root`
 
 **Type Scale (required — at least one full approach)**
 
-[ ] `design-system.md` documents which type scale approach was chosen (Option A or Option B)
-[ ] The chosen approach's tokens are present (either in `:root` as CSS custom properties, or explicitly documented as delegating to Tailwind defaults)
-[ ] No TBD slots remain in the type scale section
+- [ ] `design-system.md` documents which type scale approach was chosen (Option A or Option B)
+- [ ] The chosen approach's tokens are present (either in `:root` as CSS custom properties, or explicitly documented as delegating to Tailwind defaults)
+- [ ] No TBD slots remain in the type scale section
 
 **Weights/Leading/Tracking (required)**
 
-[ ] `design-system.md` documents the weight scale (at minimum: regular 400, medium 500, semibold 600, bold 700)
-[ ] `design-system.md` documents the leading scale (at minimum: tight, normal, relaxed)
-[ ] `design-system.md` documents the tracking scale (at minimum: tight, normal, wide)
+- [ ] `design-system.md` documents the weight scale (at minimum: regular 400, medium 500, semibold 600, bold 700)
+- [ ] `design-system.md` documents the leading scale (at minimum: tight, normal, relaxed)
+- [ ] `design-system.md` documents the tracking scale (at minimum: tight, normal, wide)
 
 **Radius (required)**
 
-[ ] `--radius` in `:root`
-[ ] `--radius-sm` in `:root`
-[ ] `--radius-md` in `:root`
-[ ] `--radius-lg` in `:root`
-[ ] `--radius-xl` in `:root`
-[ ] `--radius-pill` in `:root`
-[ ] `--radius-full` in `:root`
+- [ ] `--radius` in `:root`
+- [ ] `--radius-sm` in `:root`
+- [ ] `--radius-md` in `:root`
+- [ ] `--radius-lg` in `:root`
+- [ ] `--radius-xl` in `:root`
+- [ ] `--radius-pill` in `:root`
+- [ ] `--radius-full` in `:root`
 
 **Spacing (required — decision documented)**
 
-[ ] `design-system.md` contains a "Spacing Decision" note — either "Using Tailwind default" or a custom scale
-[ ] No TBD slots remain in the spacing section
+- [ ] `design-system.md` contains a "Spacing Decision" note — either "Using Tailwind default" or a custom scale
+- [ ] No TBD slots remain in the spacing section
 
 **Shadows (required)**
 
-[ ] `--shadow-sm` in `:root`
-[ ] `--shadow-md` in `:root`
-[ ] `--shadow-lg` in `:root`
-[ ] `--shadow-xl` in `:root`
-[ ] `--shadow-2xl` in `:root`
+- [ ] `--shadow-sm` in `:root`
+- [ ] `--shadow-md` in `:root`
+- [ ] `--shadow-lg` in `:root`
+- [ ] `--shadow-xl` in `:root`
+- [ ] `--shadow-2xl` in `:root`
 
 **Motion (required — decision documented)**
 
-[ ] Either motion CSS custom properties present in `:root` (duration fast/normal/slow + easing curves), OR `design-system.md` documents that motion is defined via Tailwind theme extensions
-[ ] No TBD slots remain in the motion section
+- [ ] Either motion CSS custom properties present in `:root` (duration fast/normal/slow + easing curves), OR `design-system.md` documents that motion is defined via Tailwind theme extensions
+- [ ] No TBD slots remain in the motion section
 
 **Breakpoints (required — decision documented)**
 
-[ ] `design-system.md` documents breakpoints — either "Using Tailwind defaults" or a custom scale with named values
-[ ] No TBD slots remain in the breakpoints section
+- [ ] `design-system.md` documents breakpoints — either "Using Tailwind defaults" or a custom scale with named values
+- [ ] No TBD slots remain in the breakpoints section
 
 **Z-index (required — named layers documented)**
 
-[ ] `design-system.md` contains a z-index layer table with named layers (not arbitrary numbers)
-[ ] No TBD slots remain in the z-index section
+- [ ] `design-system.md` contains a z-index layer table with named layers (not arbitrary numbers)
+- [ ] No TBD slots remain in the z-index section
 
 **Dark Mode (required — complete parity)**
 
-[ ] Every color token in `:root` has a corresponding entry in `.dark` (or `[data-theme="dark"]`)
-[ ] `design-system.md` documents the dark mode strategy (class-based, attribute-based, or system media query)
-[ ] `tailwind.config.ts` `darkMode` setting matches the documented strategy
+- [ ] Every color token in `:root` has a corresponding entry in `.dark` (or `[data-theme="dark"]`)
+- [ ] `design-system.md` documents the dark mode strategy (class-based, attribute-based, or system media query)
+- [ ] `tailwind.config.ts` `darkMode` setting matches the documented strategy
 
 ### Step 4 — Tailwind Config Sanity Check
 
-[ ] Every color token in `:root` that is required by the checklist is bound in `tailwind.config.ts`
-[ ] All color bindings use a CSS variable reference — no hardcoded hex or HSL values in the config
-[ ] `darkMode` is set and matches the strategy in `design-system.md`
-[ ] `fontFamily.sans`, `fontFamily.serif`, `fontFamily.mono` are bound to the CSS custom properties
-[ ] `borderRadius` entries reference CSS custom properties
-[ ] `boxShadow` entries reference CSS custom properties
+- [ ] Every color token in `:root` that is required by the checklist is bound in `tailwind.config.ts`
+- [ ] All color bindings use a CSS variable reference — no hardcoded hex or HSL values in the config
+- [ ] `darkMode` is set and matches the strategy in `design-system.md`
+- [ ] `fontFamily.sans`, `fontFamily.serif`, `fontFamily.mono` are bound to the CSS custom properties
+- [ ] `borderRadius` entries reference CSS custom properties
+- [ ] `boxShadow` entries reference CSS custom properties
 
 ---
 

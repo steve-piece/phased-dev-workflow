@@ -436,50 +436,50 @@ Run at the end of every slice. Do not report the slice "ready to ship" until eve
 
 ### 1. Plan Tasks Complete
 
-[ ] Every in-scope checklist item from the active `docs/plans/stage_<n>_*.md` is implemented.
-[ ] Both `spec-reviewer` and `quality-reviewer` returned `verdict: pass` for each item.
-[ ] The builder emitted a complete **build manifest** (§Appendix A) covering every route / affordance / serverAction / transition.
-[ ] `slice-verifier` returned `overall: pass` — lint, typecheck, build, unit/integration, e2e (per `verification.e2e`), design-system static grep, CI-integrity, and the manifest under-declaration backstop all clear.
-[ ] `slice-tester` returned `overall: pass` — every declared affordance exercised, every transition confirmed **both directions on every surface**, and (for data-flow slices) the seed cleaned up with zero residue.
-[ ] No `[ ]` items remain in the active slice (deferred items moved out-of-scope with a note).
-[ ] If `debug-instrumenter` ran, every `// INSTRUMENT` line was stripped before final commit.
+- [ ] Every in-scope checklist item from the active `docs/plans/stage_<n>_*.md` is implemented.
+- [ ] Both `spec-reviewer` and `quality-reviewer` returned `verdict: pass` for each item.
+- [ ] The builder emitted a complete **build manifest** (§Appendix A) covering every route / affordance / serverAction / transition.
+- [ ] `slice-verifier` returned `overall: pass` — lint, typecheck, build, unit/integration, e2e (per `verification.e2e`), design-system static grep, CI-integrity, and the manifest under-declaration backstop all clear.
+- [ ] `slice-tester` returned `overall: pass` — every declared affordance exercised, every transition confirmed **both directions on every surface**, and (for data-flow slices) the seed cleaned up with zero residue.
+- [ ] No `[ ]` items remain in the active slice (deferred items moved out-of-scope with a note).
+- [ ] If `debug-instrumenter` ran, every `// INSTRUMENT` line was stripped before final commit.
 
 ### 1a. Library Preview Gate (frontend / full-stack with UI only)
 
 Skip only if the slice is `type: backend`, `db-schema`, or `infrastructure` with zero UI changes, OR the slice is a pure internal refactor with no rendered-output delta in any production route.
 
-[ ] `library-entry-writer` ran the Phase 0 extend-vs-create gate and reported `build_decision` for every dispatched item.
-[ ] Every component / block delivered in this slice has a `/library?tab=<id>` entry with all variants and states (default / hover / focus / disabled / loading / empty / error / populated).
-[ ] Every entry uses `<EntryHeader sourcePath=…>` and `<EntrySection sourcePath=… sourceLines=…>` so the page H1 and every state H3 render a working copy-Markdown-link button.
-[ ] Every new entry is registered in all three registries (`_registry/tabs.ts` → `LIBRARY_TABS`, `_registry/stories.tsx` → `STORIES`, `_registry/entries.ts` → `entries`). Modify-case entries leave registry rows alone unless `name` / `tags` genuinely changed.
-[ ] Every existing library component whose user-visible surface (props, copy, content, variants, states, or styles) changed in a production route has its `/library?tab=<id>` entry updated to reflect the change.
-[ ] Library gate resolved per `flow.libraryGate`: in `"human"` mode the Phase 4.5 prompt embedded the self-critique block AND clickable preview URLs and the user approved before any production-route import; in `"self-critique"` mode the agent cleared its self-critique (or stopped on a flagged concern).
-[ ] No component imported into a production route, and no user-visible consumer-side edit committed, without library-first review.
-[ ] Closing-narrative paragraph (what was built · why this shape · what was left out · what reviewers should pay attention to) drafted for the PR description in §3 below.
+- [ ] `library-entry-writer` ran the Phase 0 extend-vs-create gate and reported `build_decision` for every dispatched item.
+- [ ] Every component / block delivered in this slice has a `/library?tab=<id>` entry with all variants and states (default / hover / focus / disabled / loading / empty / error / populated).
+- [ ] Every entry uses `<EntryHeader sourcePath=…>` and `<EntrySection sourcePath=… sourceLines=…>` so the page H1 and every state H3 render a working copy-Markdown-link button.
+- [ ] Every new entry is registered in all three registries (`_registry/tabs.ts` → `LIBRARY_TABS`, `_registry/stories.tsx` → `STORIES`, `_registry/entries.ts` → `entries`). Modify-case entries leave registry rows alone unless `name` / `tags` genuinely changed.
+- [ ] Every existing library component whose user-visible surface (props, copy, content, variants, states, or styles) changed in a production route has its `/library?tab=<id>` entry updated to reflect the change.
+- [ ] Library gate resolved per `flow.libraryGate`: in `"human"` mode the Phase 4.5 prompt embedded the self-critique block AND clickable preview URLs and the user approved before any production-route import; in `"self-critique"` mode the agent cleared its self-critique (or stopped on a flagged concern).
+- [ ] No component imported into a production route, and no user-visible consumer-side edit committed, without library-first review.
+- [ ] Closing-narrative paragraph (what was built · why this shape · what was left out · what reviewers should pay attention to) drafted for the PR description in §3 below.
 
 ### 2. Master Checklist Updated
 
-[ ] Every completed item is flipped `[ ]` → `[x]` in `docs/plans/00_master_checklist.md`.
-[ ] Slice status updated (`Not Started` → `In Progress` → `Completed`) to match reality.
-[ ] Slice-level exit criteria boxes ticked where satisfied.
-[ ] Inline notes added next to any item whose scope deviated from the plan.
-[ ] Edits committed on the slice branch (not on `main`).
+- [ ] Every completed item is flipped `[ ]` → `[x]` in `docs/plans/00_master_checklist.md`.
+- [ ] Slice status updated (`Not Started` → `In Progress` → `Completed`) to match reality.
+- [ ] Slice-level exit criteria boxes ticked where satisfied.
+- [ ] Inline notes added next to any item whose scope deviated from the plan.
+- [ ] Edits committed on the slice branch (not on `main`).
 
 ### 3. Slice Committed Locally (ready for review)
 
-[ ] Branch follows naming: `feat/` | `fix/` | `chore/` + `stage-<n>-<scope>` (or the pie branch under `/sell-pie`).
-[ ] Slice committed on the feature/pie branch (no uncommitted leftover changes).
-[ ] `slice-verifier` returned `verdict: pass`, including its CI-integrity check (no existing workflow gate weakened) and the e2e coverage the pie-boundary CI will gate on.
-[ ] One slice = one commit's worth of changes. No bundling unless the user authorized it in Phase 2. (Per-slice = commit + push; no PR yet.)
+- [ ] Branch follows naming: `feat/` | `fix/` | `chore/` + `stage-<n>-<scope>` (or the pie branch under `/sell-pie`).
+- [ ] Slice committed on the feature/pie branch (no uncommitted leftover changes).
+- [ ] `slice-verifier` returned `verdict: pass`, including its CI-integrity check (no existing workflow gate weakened) and the e2e coverage the pie-boundary CI will gate on.
+- [ ] One slice = one commit's worth of changes. No bundling unless the user authorized it in Phase 2. (Per-slice = commit + push; no PR yet.)
 
 ### 4. E2E / behavioral coverage (if applicable)
 
 Skip only if the slice is documentation-only or has zero observable behavior change.
 
-[ ] New behavior covered by a `@feature`-tagged E2E spec (run/gated per `verification.e2e.feature`).
-[ ] Critical existing flows touched by this slice covered by `@regression-core` (per `verification.e2e.regressionCore`).
-[ ] For data-flow slices, the `slice-tester` persisted the seed + cleanup pair under `tests/seeds/<slice>/` for pie-boundary CI reproducibility.
-[ ] `.github/workflows/` feature gates trigger `on: pull_request` (so per-slice pushes stay cheap; CI fires once at the pie PR).
+- [ ] New behavior covered by a `@feature`-tagged E2E spec (run/gated per `verification.e2e.feature`).
+- [ ] Critical existing flows touched by this slice covered by `@regression-core` (per `verification.e2e.regressionCore`).
+- [ ] For data-flow slices, the `slice-tester` persisted the seed + cleanup pair under `tests/seeds/<slice>/` for pie-boundary CI reproducibility.
+- [ ] `.github/workflows/` feature gates trigger `on: pull_request` (so per-slice pushes stay cheap; CI fires once at the pie PR).
 
 ---
 

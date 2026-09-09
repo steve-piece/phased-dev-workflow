@@ -159,32 +159,32 @@ Walk this at the end of every run. Do not report complete until every box is `[x
 
 ### 1. Pre-flight passed
 
-[ ] Framework(s) detected.
-[ ] Dev-server command identified.
-[ ] At least one browser MCP available.
+- [ ] Framework(s) detected.
+- [ ] Dev-server command identified.
+- [ ] At least one browser MCP available.
 
 ### 2. Dev server booted
 
-[ ] Background dev server started, PID captured.
-[ ] At least one route returned 200/3xx on every declared port before walking began.
-[ ] Wait did not exceed 90 seconds.
+- [ ] Background dev server started, PID captured.
+- [ ] At least one route returned 200/3xx on every declared port before walking began.
+- [ ] Wait did not exceed 90 seconds.
 
 ### 3. Walk complete
 
-[ ] Platform-walker sub-agent dispatched and returned.
-[ ] Structured return contract received with `status` and `verdict`.
-[ ] Screenshot directory exists and is non-empty.
+- [ ] Platform-walker sub-agent dispatched and returned.
+- [ ] Structured return contract received with `status` and `verdict`.
+- [ ] Screenshot directory exists and is non-empty.
 
 ### 4. Cleanup done
 
-[ ] Dev-server PID killed (or fallback `pkill` ran).
-[ ] No orphan processes holding the ports.
-[ ] Any browser sessions opened by the walker were closed.
+- [ ] Dev-server PID killed (or fallback `pkill` ran).
+- [ ] No orphan processes holding the ports.
+- [ ] Any browser sessions opened by the walker were closed.
 
 ### 5. Report surfaced
 
-[ ] Operator received the full-report path, top-5 ranked gaps, screenshot directory.
-[ ] If `verdict: drifted`, operator was prompted with a recommended next action.
+- [ ] Operator received the full-report path, top-5 ranked gaps, screenshot directory.
+- [ ] If `verdict: drifted`, operator was prompted with a recommended next action.
 
 ---
 

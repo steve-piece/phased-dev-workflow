@@ -242,31 +242,31 @@ This skill does NOT call `ask_user_input_v0` for HITL resolution, it bubbles up 
 
 ## Completion Checklist
 
-[ ] Input mode determined (bundle-first or brief-first)
-[ ] Bundle validated OR token system generated and user-approved
-[ ] `compliance-pre-check` returned `status: pass` for all token categories
-[ ] Sidebar tokens included if project has an app shell
-[ ] Dark mode tokens defined for every color token
-[ ] `app/globals.css` (or `src/app/globals.css`) written with all token definitions
-[ ] `tailwind.config.ts` written with token bindings
-[ ] `docs/design-system.md` written with canonical token reference
-[ ] `docs/design-bundle/` populated (Mode A only)
-[ ] Project-specific code patterns captured (only non-null answers written)
-[ ] Design-system rules block appended to project rules file (CLAUDE.md or AGENTS.md)
-[ ] `/library` route generated with `?tab=<id>` query-param routing and rendering at least one example entry
-[ ] `_registry/registry.tsx` holds the single grouped registry (`LIBRARY_GROUPS` -> `LIBRARY` -> `ALL_ENTRIES`) plus a pinned `DEFAULT_TAB`, a `LEGACY_TAB_ALIASES` map, `categoryOf()`, and `CATEGORY_ICONS`, and is TypeScript-coherent
-[ ] No `LIBRARY_TABS` tuple, `isLibraryTab()` guard, or `STORIES` dispatch map was generated
-[ ] Sidebar renders collapsible category folders with leading icons, entry counts, a rotating chevron, a left accent rail on the active entry (no dot badges), and search that force-opens matching folders
-[ ] Open-folder state is in-memory and seeded from the active tab (NOT persisted to `localStorage`); a cold deep link opens its folder
-[ ] Sticky reference toolbar rendered by the shell on every tab, with the `?tab=<id>` chip plus working `Copy reference` and `Copy link` pills
-[ ] `<EntryHeader>` / `<EntrySection>` / `<EntryStage>` server helpers + `<EntrySourceCopy>` client island scaffolded in `_components/` and **exported** for entry files to import
-[ ] Seed Buttons entry lives at `_entries/buttons-entry.tsx`, declares a `src` const, passes it through `<EntryHeader sourcePath=…>` and every anchored `<EntrySection sourcePath=…>`, and demonstrates contrasting states side by side inside one section
-[ ] `?tab=garbage` falls back to the pinned default tab cleanly, no crash
-[ ] `/library` excluded from every navigation surface (sidebar, top nav, mobile sheet, sitemap, robots)
-[ ] Theme toggle present at sidebar bottom and persists across reloads
-[ ] No `- [ ]` checkbox syntax used in any output file, only `[ ]`
-[ ] No platform-specific bare references ("cursor rules", "claude rules") in any output
-[ ] Return contract YAML emitted
+- [ ] Input mode determined (bundle-first or brief-first)
+- [ ] Bundle validated OR token system generated and user-approved
+- [ ] `compliance-pre-check` returned `status: pass` for all token categories
+- [ ] Sidebar tokens included if project has an app shell
+- [ ] Dark mode tokens defined for every color token
+- [ ] `app/globals.css` (or `src/app/globals.css`) written with all token definitions
+- [ ] `tailwind.config.ts` written with token bindings
+- [ ] `docs/design-system.md` written with canonical token reference
+- [ ] `docs/design-bundle/` populated (Mode A only)
+- [ ] Project-specific code patterns captured (only non-null answers written)
+- [ ] Design-system rules block appended to project rules file (CLAUDE.md or AGENTS.md)
+- [ ] `/library` route generated with `?tab=<id>` query-param routing and rendering at least one example entry
+- [ ] `_registry/registry.tsx` holds the single grouped registry (`LIBRARY_GROUPS` -> `LIBRARY` -> `ALL_ENTRIES`) plus a pinned `DEFAULT_TAB`, a `LEGACY_TAB_ALIASES` map, `categoryOf()`, and `CATEGORY_ICONS`, and is TypeScript-coherent
+- [ ] No `LIBRARY_TABS` tuple, `isLibraryTab()` guard, or `STORIES` dispatch map was generated
+- [ ] Sidebar renders collapsible category folders with leading icons, entry counts, a rotating chevron, a left accent rail on the active entry (no dot badges), and search that force-opens matching folders
+- [ ] Open-folder state is in-memory and seeded from the active tab (NOT persisted to `localStorage`); a cold deep link opens its folder
+- [ ] Sticky reference toolbar rendered by the shell on every tab, with the `?tab=<id>` chip plus working `Copy reference` and `Copy link` pills
+- [ ] `<EntryHeader>` / `<EntrySection>` / `<EntryStage>` server helpers + `<EntrySourceCopy>` client island scaffolded in `_components/` and **exported** for entry files to import
+- [ ] Seed Buttons entry lives at `_entries/buttons-entry.tsx`, declares a `src` const, passes it through `<EntryHeader sourcePath=…>` and every anchored `<EntrySection sourcePath=…>`, and demonstrates contrasting states side by side inside one section
+- [ ] `?tab=garbage` falls back to the pinned default tab cleanly, no crash
+- [ ] `/library` excluded from every navigation surface (sidebar, top nav, mobile sheet, sitemap, robots)
+- [ ] Theme toggle present at sidebar bottom and persists across reloads
+- [ ] Every checkbox in any output file is a `- [ ]` task-list item (no bare `[ ]` lines)
+- [ ] No platform-specific bare references ("cursor rules", "claude rules") in any output
+- [ ] Return contract YAML emitted
 
 ---
 

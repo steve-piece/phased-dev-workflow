@@ -192,16 +192,16 @@ After the Workflow barrier, **dispatch `master-checklist-synthesizer`** with the
 
 1. Writes **Pie 1 — Foundations** as the `## Prep` gate at the top — the gate IS Pie 1's completion tracker, with one checkbox per foundation slice 1.1–1.4 (always in this order):
    ```
-   ## Prep — Pie 1: Foundations (run once before any feature work)
-   [ ] Slice 1.1 — Display case built       — run /set-display-case
-   [ ] Slice 1.2 — Quality line installed   — run /final-quality-check
-   [ ] Slice 1.3 — Shop open                — run /open-the-shop
-   [ ] Slice 1.4 — DB schema foundation     — run /sell-slice on Slice 1.4 (handled internally; only if backend in scope)
+   ## Prep (Pie 1 Foundations, run once before any feature work)
+   - [ ] Slice 1.1, Display case built       : run /set-display-case
+   - [ ] Slice 1.2, Quality line installed   : run /final-quality-check
+   - [ ] Slice 1.3, Shop open                : run /open-the-shop
+   - [ ] Slice 1.4, DB schema foundation     : run /sell-slice on Slice 1.4 (handled internally; only if backend in scope)
    ```
    Drop the last line if Q3 = No (no DB). The heading MUST keep `## Prep` as its first word so `hooks/lib/checklist.sh` `bts_prep_counts` matches it.
-2. Builds the **feature Pies 2+** roadmap from the structured returns: `## Pie N — <name>` (with the `<!-- review: boundary|continuous -->` annotation mirroring each pie's `review`), then `### Slice N.M — <name>` blocks with completion criteria + the per-slice Exit-criteria contract.
+2. Builds the **feature Pies 2+** roadmap from the structured returns: `## Pie N: <name>` (with the `<!-- review: boundary|continuous -->` annotation mirroring each pie's `review`), then `### Slice N.M: <name>` blocks with completion criteria + the per-slice Exit-criteria contract.
 3. Writes the rest of `docs/plans/00_master_checklist.md`.
-4. Uses `[ ]` checkbox format (no leading dash).
+4. Uses GitHub task-list checkboxes: `- [ ]`, one criterion per line. A bare `[ ]` with no list marker is plain text to every Markdown renderer, so consecutive criteria collapse into one paragraph and read as a horizontal blob on GitHub.
 
 See [`references/templates.md`](references/templates.md) for the exact nested checklist template, including the `## Prep` gate (Pie 1 — Foundations) and the `review:` annotation.
 
@@ -263,6 +263,7 @@ CLAUDE.md or AGENTS.md (per Q12)
 
 - **Two levels:** Pies are coherent 3–8-slice chapters with low cross-coupling (the unit of autonomy, PR, worktree, HITL); Slices are vertical deliverables (UI + route + data + tests for one user-facing thing).
 - **Hard cap per slice:** 6 tasks, ~15 files, completable in one Claude session.
+- **Plans carry contracts, not implementations.** Code fences hold commands, schema DDL, exported signatures and type shapes, and byte-exact config; behaviors, states, edge cases, and test cases are prose. Bodies are the builder's job, written against the real tree. See `agents/phased-plan-writer.md` "Code budget".
 - **One PR per Pie** (not per slice): per-slice work is commit + push to the pie branch; the PR opens at the pie boundary via `/box-it-up`.
 - **`review:` is a pie property:** `boundary` (default, autonomous) vs `continuous` (forces `/sell-slice` mode). Sensitive pies (Payments, Auth, real-data migrations) are `continuous`.
 - **No forward references:** a slice may only reference packages, tables, or components built in prior slices.
@@ -285,25 +286,25 @@ Every slice file uses the contract in [`references/stage-frontmatter-contract.md
 - **`--repie` is the only mutating path** and runs only on explicit `--repie` + user confirmation. Never auto-convert; never create new slices.
 - **Writers write exactly one file each** and return structured envelopes; the synthesizer consumes returns, not disk.
 - **Schema-validate every writer return** at the Workflow barrier (manually in the in-context fallback).
-- **No `- [ ]` checkboxes** in generated files — use `[ ]` only.
+- **Checkboxes are GitHub task-list items** in generated files: `- [ ]` / `- [x]`, one per line. Never a bare `[ ]` without the list marker (it does not render as a list).
 - **No platform-specific references** — use "project rules file", not "cursor rules" or "claude rules".
 - **No forward references** in any slice's `depends_on`.
 - **Subagents never call `ask_user_input_v0`** — they set `needs_human` + `hitl_*`; the orchestrator prompts.
 
 ## Completion checklist
 
-[ ] All 12 elicitation questions answered and answers written to project rules file
-[ ] Project rules file assembled with correct layering: baseline → Q9 imports → design-system patterns
-[ ] Pie/Slice roadmap presented to user and approved (pies, `review:` per pie, slices nested with type + `depends_on`)
-[ ] db-schema slice (Slice 1.4) plan file written if Q3 = Yes
-[ ] All feature slice files written via the Phase 3 Workflow (`parallel()` writers, barrier)
-[ ] Every writer return schema-validated against the Output Contract (manually if `Workflow` unavailable)
-[ ] All slice files include valid YAML frontmatter per `references/stage-frontmatter-contract.md` (incl. `pie`/`slice`/`review`)
-[ ] Master checklist synthesized from the structured returns (not disk re-read): Pie 1 — Foundations as the `## Prep` gate at top, then feature Pies 2+ as nested `## Pie N` / `### Slice N.M` with `review:` annotations
-[ ] Linear stubs created if Q2 = Linear (one milestone per pie; `linear_milestone` fields populated)
-[ ] (`--repie` only) Flat checklist converted on explicit opt-in; dual-read verified; no new slices invented
-[ ] No `- [ ]` checkboxes in generated files (all use `[ ]` format)
-[ ] No platform-specific references in generated files
+- [ ] All 12 elicitation questions answered and answers written to project rules file
+- [ ] Project rules file assembled with correct layering: baseline → Q9 imports → design-system patterns
+- [ ] Pie/Slice roadmap presented to user and approved (pies, `review:` per pie, slices nested with type + `depends_on`)
+- [ ] db-schema slice (Slice 1.4) plan file written if Q3 = Yes
+- [ ] All feature slice files written via the Phase 3 Workflow (`parallel()` writers, barrier)
+- [ ] Every writer return schema-validated against the Output Contract (manually if `Workflow` unavailable)
+- [ ] All slice files include valid YAML frontmatter per `references/stage-frontmatter-contract.md` (incl. `pie`/`slice`/`review`)
+- [ ] Master checklist synthesized from the structured returns (not disk re-read): Pie 1 — Foundations as the `## Prep` gate at top, then feature Pies 2+ as nested `## Pie N` / `### Slice N.M` with `review:` annotations
+- [ ] Linear stubs created if Q2 = Linear (one milestone per pie; `linear_milestone` fields populated)
+- [ ] (`--repie` only) Flat checklist converted on explicit opt-in; dual-read verified; no new slices invented
+- [ ] Every checkbox in generated files is a `- [ ]` task-list item (no bare `[ ]` lines)
+- [ ] No platform-specific references in generated files
 
 ## Return contract
 

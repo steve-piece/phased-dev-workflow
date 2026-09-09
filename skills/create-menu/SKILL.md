@@ -131,12 +131,12 @@ Not all gaps are equal. Use these tags so downstream readers know what's urgent:
 
 Before writing the file, verify:
 
-[ ] Every capability in **Section 2** maps to at least one non-functional constraint in **Section 3**
-[ ] Every integration implied in **Section 2** is accounted for in **Section 4**
-[ ] Every open question from plan-mode answers appears in **Section 6**
-[ ] **Section 7** contains at least 2 explicit out-of-scope items
-[ ] Architecture choice in **Section 4** matches the conditional rule (Step 2)
-[ ] Every `[TBD-BLOCKER]` item is surfaced in **Section 6**
+- [ ] Every capability in **Section 2** maps to at least one non-functional constraint in **Section 3**
+- [ ] Every integration implied in **Section 2** is accounted for in **Section 4**
+- [ ] Every open question from plan-mode answers appears in **Section 6**
+- [ ] **Section 7** contains at least 2 explicit out-of-scope items
+- [ ] Architecture choice in **Section 4** matches the conditional rule (Step 2)
+- [ ] Every `[TBD-BLOCKER]` item is surfaced in **Section 6**
 
 If any check fails, fix the gap before writing the file or explicitly flag it with a tagged TBD.
 
@@ -200,15 +200,15 @@ After writing the PRD file and completing the review loop, end the response with
 
 ## Completion Checklist
 
-[ ] Plan-mode gate completed (3–7 questions asked and answered)
-[ ] Architecture conditional evaluated and documented in Section 4
-[ ] All 8 sections (0–7) present in the output PRD
-[ ] No Linear references in output
-[ ] Consistency check passed (or gaps flagged with TBD tags)
-[ ] `prd-reviewer` dispatched and returned `verdict: pass` (or HITL surfaced after 2 iterations)
-[ ] PRD written to `docs/prd-[project-slug].md`
-[ ] Generation summary included in response
-[ ] All `- [ ]` checkbox syntax converted to `[ ]` in output
+- [ ] Plan-mode gate completed (3–7 questions asked and answered)
+- [ ] Architecture conditional evaluated and documented in Section 4
+- [ ] All 8 sections (0–7) present in the output PRD
+- [ ] No Linear references in output
+- [ ] Consistency check passed (or gaps flagged with TBD tags)
+- [ ] `prd-reviewer` dispatched and returned `verdict: pass` (or HITL surfaced after 2 iterations)
+- [ ] PRD written to `docs/prd-[project-slug].md`
+- [ ] Generation summary included in response
+- [ ] Every checkbox in the output is a `- [ ]` task-list item (no bare `[ ]` lines)
 
 ---
 

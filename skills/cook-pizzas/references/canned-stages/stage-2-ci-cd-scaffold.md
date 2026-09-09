@@ -48,14 +48,14 @@ completion_criteria:
 
 This stage's task list is not duplicated here. The single task is:
 
-[ ] Run the `final-quality-check` skill in full.
+- [ ] Run the `final-quality-check` skill in full.
 
 The skill's `SKILL.md` (Phases 0–6) is the source of truth for the work. Its completion checklist (embedded in `final-quality-check/SKILL.md`) is the source of truth for "done".
 
 Additional CI jobs to add beyond the base scaffold:
-[ ] `design-system-compliance` job — validates no component uses hard-coded color values outside the token system
-[ ] `db-schema-drift` job — validates schema source matches applied migrations (only if Stage 4 is in scope)
-[ ] `visual` job — runs Playwright visual regression at 375 / 768 / 1280 / 1920 viewports
+- [ ] `design-system-compliance` job — validates no component uses hard-coded color values outside the token system
+- [ ] `db-schema-drift` job — validates schema source matches applied migrations (only if Stage 4 is in scope)
+- [ ] `visual` job — runs Playwright visual regression at 375 / 768 / 1280 / 1920 viewports
 
 **Commit:** delegated to final-quality-check skill (conventional commits per task within that skill)
 

@@ -43,14 +43,14 @@ The create-menu skill passes these when dispatching:
 
 Verify the PRD contains all required sections with substantive content:
 
-[ ] Section 0: Project Metadata — all fields present (name, slug, owner, target launch, architecture decision)
-[ ] Section 1: Problem & Users — both subsections (1.1 Problem, 1.2 Users) present, one paragraph each, no marketing language
-[ ] Section 2: Functional Requirements — capabilities listed with user value, behaviors, and at least one edge case each
-[ ] Section 3: Non-Functional Requirements — concrete numeric targets in 3.1 Performance; accessibility target in 3.2; security posture in 3.3
-[ ] Section 4: Technical Architecture — architecture decision documented with rationale; matches the conditional rule (marketing-only → single app, any auth → monorepo)
-[ ] Section 5: UX & Content Fundamentals — voice/tone, brand stance, content requirements, key screens/states
-[ ] Section 6: Open Questions & Assumptions — all `[TBD-BLOCKER]` items from the document appear here; plan-mode answers captured
-[ ] Section 7: Out of Scope — at least 2 explicit exclusions with rationale
+- [ ] Section 0: Project Metadata — all fields present (name, slug, owner, target launch, architecture decision)
+- [ ] Section 1: Problem & Users — both subsections (1.1 Problem, 1.2 Users) present, one paragraph each, no marketing language
+- [ ] Section 2: Functional Requirements — capabilities listed with user value, behaviors, and at least one edge case each
+- [ ] Section 3: Non-Functional Requirements — concrete numeric targets in 3.1 Performance; accessibility target in 3.2; security posture in 3.3
+- [ ] Section 4: Technical Architecture — architecture decision documented with rationale; matches the conditional rule (marketing-only → single app, any auth → monorepo)
+- [ ] Section 5: UX & Content Fundamentals — voice/tone, brand stance, content requirements, key screens/states
+- [ ] Section 6: Open Questions & Assumptions — all `[TBD-BLOCKER]` items from the document appear here; plan-mode answers captured
+- [ ] Section 7: Out of Scope — at least 2 explicit exclusions with rationale
 
 Fail condition: any section missing, empty, or containing only template placeholder text.
 
@@ -71,7 +71,7 @@ Report specific `source <-> claim` mismatches. Do not flag inferences that are m
 - Confirm no required subsection is absent
 - Confirm all undefined terms or acronyms are either explained on first use or flagged with `[TBD-ASSUMPTION]`
 - Confirm no Linear references appear anywhere in the PRD
-- Confirm all `- [ ]` checkbox syntax has been converted to `[ ]`
+- Confirm every checkbox is a `- [ ]` task-list item (no bare `[ ]` lines)
 
 ## Return Shape
 

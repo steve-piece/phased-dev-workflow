@@ -6,25 +6,25 @@ Opinion-free baseline that the phased-plan elicitation injects into your project
 
 > Non-negotiable. Rooted in WCAG / semantic HTML / browser standards.
 
-[ ] Every interactive element has a visible focus ring
-[ ] Hit targets: 24px minimum desktop, 44px minimum mobile
-[ ] Respect `prefers-reduced-motion` on every transition
-[ ] Icon-only buttons have descriptive `aria-label`
-[ ] Use `<a>` / `<Link>` for navigation; never `<button>` for navigation
-[ ] Display validation errors inline next to the field that failed
-[ ] On submit failure, auto-focus the first errored field
-[ ] Loading buttons retain their label and show a spinner; disable until response completes
-[ ] Confirm destructive actions OR provide an Undo affordance — never delete on a single unguarded click
-[ ] Warn users of unsaved changes before navigating away from a dirty form
-[ ] Back / Forward navigation restores scroll position
-[ ] Skeleton loaders mirror the final content layout to prevent CLS
+- [ ] Every interactive element has a visible focus ring
+- [ ] Hit targets: 24px minimum desktop, 44px minimum mobile
+- [ ] Respect `prefers-reduced-motion` on every transition
+- [ ] Icon-only buttons have descriptive `aria-label`
+- [ ] Use `<a>` / `<Link>` for navigation; never `<button>` for navigation
+- [ ] Display validation errors inline next to the field that failed
+- [ ] On submit failure, auto-focus the first errored field
+- [ ] Loading buttons retain their label and show a spinner; disable until response completes
+- [ ] Confirm destructive actions OR provide an Undo affordance — never delete on a single unguarded click
+- [ ] Warn users of unsaved changes before navigating away from a dirty form
+- [ ] Back / Forward navigation restores scroll position
+- [ ] Skeleton loaders mirror the final content layout to prevent CLS
 
 ## Performance facts (always apply)
 
 > Measurable, framework-agnostic.
 
-[ ] Animate `transform` and `opacity` only; never layout-triggering properties (`top`, `left`, `width`, `height`)
-[ ] Avoid CLS-causing patterns: late-loading hero images without dimensions, late-injected ads, fonts without `font-display`
+- [ ] Animate `transform` and `opacity` only; never layout-triggering properties (`top`, `left`, `width`, `height`)
+- [ ] Avoid CLS-causing patterns: late-loading hero images without dimensions, late-injected ads, fonts without `font-display`
 
 ## Project structure (one variant chosen during elicitation)
 
@@ -61,10 +61,10 @@ Selected when the project scope includes more than one deployable app, OR shared
 
 Structural-only rules:
 
-[ ] Apps depend on packages; packages do not depend on apps
-[ ] No circular dependencies between packages
-[ ] Env vars live per-app in `.env.local`; never read or modify them programmatically — refer to `.env.example`
-[ ] Workspace tooling configured: each new package registered in the workspace manifest before use
+- [ ] Apps depend on packages; packages do not depend on apps
+- [ ] No circular dependencies between packages
+- [ ] Env vars live per-app in `.env.local`; never read or modify them programmatically — refer to `.env.example`
+- [ ] Workspace tooling configured: each new package registered in the workspace manifest before use
 
 > Internal app organization, package contents, and code conventions come from the rule files you import in elicitation Q9.
 
@@ -72,11 +72,11 @@ Structural-only rules:
 
 > Bypassing these creates real vulnerabilities. These are not preferences.
 
-[ ] Service-role keys are never exposed to Client Components, browser code, or any bundle that ships to the browser
-[ ] Every table accessed by user-scoped clients has at least one RLS policy; default-deny when no policy exists
-[ ] Database functions invoked by user-scoped clients use `SECURITY DEFINER` with `SET search_path = ''` and fully qualified schema names
-[ ] Non-public views use `security_invoker = on` so RLS is enforced through the invoking user's permissions
-[ ] Database calls happen on the server only; never directly from Client Components
+- [ ] Service-role keys are never exposed to Client Components, browser code, or any bundle that ships to the browser
+- [ ] Every table accessed by user-scoped clients has at least one RLS policy; default-deny when no policy exists
+- [ ] Database functions invoked by user-scoped clients use `SECURITY DEFINER` with `SET search_path = ''` and fully qualified schema names
+- [ ] Non-public views use `security_invoker = on` so RLS is enforced through the invoking user's permissions
+- [ ] Database calls happen on the server only; never directly from Client Components
 
 > Patterns like declarative schema, `COMMENT ON` for MCP context, `select()` column discipline, `.single()` vs `.maybeSingle()`, etc. are good practices but are NOT in this file — they come in via elicitation Q9 (rule files you import per project) or the design system gate where applicable.
 
@@ -86,13 +86,13 @@ Structural-only rules:
 
 ### Next.js 16+ (only if elicitation Q (framework) indicates Next.js 16+)
 
-[ ] `params`, `searchParams`, `cookies()`, `headers()` return promises and must be awaited
-[ ] Parallel routes require a `default.tsx` for every slot; return `null` or `notFound()`
+- [ ] `params`, `searchParams`, `cookies()`, `headers()` return promises and must be awaited
+- [ ] Parallel routes require a `default.tsx` for every slot; return `null` or `notFound()`
 
 ### React 19+ (only if elicitation indicates React 19+)
 
-[ ] `ref` is passed as a standard prop; `forwardRef` is no longer required
-[ ] `<Context value={}>` is used directly as a provider
+- [ ] `ref` is passed as a standard prop; `forwardRef` is no longer required
+- [ ] `<Context value={}>` is used directly as a provider
 
 ## How elicitation injects this into the project rules file
 

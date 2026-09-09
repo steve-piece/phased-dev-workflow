@@ -32,56 +32,56 @@ completion_criteria:
 <!-- docs/plans/00_master_checklist.md -->
 <!-- Master checklist tracking all pies, slices, and completion criteria -->
 
-# [Project Name] — Master Checklist
+# [Project Name]: Master Checklist
 
 [One-sentence description of the project.]
 
 ---
 
-## Prep — Pie 1: Foundations (run once before any feature work)
+## Prep (Pie 1 Foundations, run once before any feature work)
 
 This is **Pie 1 — Foundations**: its four slices (1.1–1.4) are the run-once standalone skills the user invokes directly. The "Prep" gate IS Pie 1's completion tracker — not a separate concept. `/sell-slice` checks every box below before accepting any feature slice (feature work is Pie 2 onward). Each foundation skill flips its own checkbox on completion when invoked in sequential mode.
 
-[ ] Slice 1.1 — Display case built       — run `/bytheslice:set-display-case` (design system, tokens, /library route)
-[ ] Slice 1.2 — Quality line installed   — run `/bytheslice:final-quality-check` (CI/CD, E2E, design-system-compliance, visual-regression)
-[ ] Slice 1.3 — Shop open                — run `/bytheslice:open-the-shop` (env vars, external service credentials)
-[ ] Slice 1.4 — DB schema foundation     — run `/bytheslice:sell-slice` on `stage_4_db_schema_foundation.md` (only if backend in scope)
+- [ ] Slice 1.1, Display case built       : run `/bytheslice:set-display-case` (design system, tokens, /library route)
+- [ ] Slice 1.2, Quality line installed   : run `/bytheslice:final-quality-check` (CI/CD, E2E, design-system-compliance, visual-regression)
+- [ ] Slice 1.3, Shop open                : run `/bytheslice:open-the-shop` (env vars, external service credentials)
+- [ ] Slice 1.4, DB schema foundation     : run `/bytheslice:sell-slice` on `stage_4_db_schema_foundation.md` (only if backend in scope)
 
 ---
 
 <!-- Feature pies start at Pie 2 — Pie 1 is Foundations (the Prep gate above). -->
-## Pie N — [Pie Name]    <!-- review: boundary -->
+## Pie N: [Pie Name]    <!-- review: boundary -->
 **Pie scope:** [one line — the coherent chapter this pie delivers] | **MVP:** Yes | No | **Depends on:** Pies [list]
 **Review:** boundary (autonomous; one HITL at the pie boundary) | continuous (forces /sell-slice mode for every slice)
 **Linear milestone:** [id or —]
 
-### Slice N.1 — [Slice Name]
+### Slice N.1: [Slice Name]
 **Type:** [type] | **Depends on:** Slices [list]
 
 Completion criteria:
-[ ] [criterion from frontmatter]
-[ ] tests_passing
-[ ] slice-tester pass (behavioral; per-affordance verdict + evidence)
-[ ] slice-verifier pass (lint + typecheck + build + unit/integration + e2e-by-tag + design-system grep + CI-integrity + manifest backstop)
-[ ] All unit tests added and passing
-[ ] HITL items resolved (only if hitl_required: true)
+- [ ] [criterion from frontmatter]
+- [ ] tests_passing
+- [ ] slice-tester pass (behavioral; per-affordance verdict + evidence)
+- [ ] slice-verifier pass (lint + typecheck + build + unit/integration + e2e-by-tag + design-system grep + CI-integrity + manifest backstop)
+- [ ] All unit tests added and passing
+- [ ] HITL items resolved (only if hitl_required: true)
 
 Exit criteria:
-[ ] [transcript-verifiable, binary, slice-specific — e.g. `pnpm test --filter @repo/x` exits 0]
-[ ] [Route `/path` renders with no console errors (screenshot in transcript)]
-[ ] [For each component this slice authored/modified: `/library/<slug>` approved at the Phase 4.5 gate before any production import — UI-touching slices only]
+- [ ] [transcript-verifiable, binary, slice-specific — e.g. `pnpm test --filter @repo/x` exits 0]
+- [ ] [Route `/path` renders with no console errors (screenshot in transcript)]
+- [ ] [For each component this slice authored/modified: `/library/<slug>` approved at the Phase 4.5 gate before any production import — UI-touching slices only]
 
-### Slice N.2 — [Slice Name]
+### Slice N.2: [Slice Name]
 **Type:** [type] | **Depends on:** Slices [list]
 
 Completion criteria:
-[ ] [criterion from frontmatter]
-[ ] tests_passing
-[ ] slice-tester pass
-[ ] slice-verifier pass
+- [ ] [criterion from frontmatter]
+- [ ] tests_passing
+- [ ] slice-tester pass
+- [ ] slice-verifier pass
 
 Exit criteria:
-[ ] [transcript-verifiable, binary, slice-specific]
+- [ ] [transcript-verifiable, binary, slice-specific]
 
 ---
 
@@ -128,7 +128,7 @@ completion_criteria:
 <!-- docs/plans/stage_N_short_name.md -->
 <!-- Slice N.M: [Brief semantic description for search] -->
 
-# Slice N.M — [Slice Name]
+# Slice N.M: [Slice Name]
 
 **Goal:** [One sentence describing the deliverable.]
 
@@ -153,12 +153,19 @@ completion_criteria:
 
 **Step 1: [Step description]**
 
-[Explanation of what to do.]
+[What this step builds, in prose: the behavior, its states, its edge cases, its authorization rule. No implementation body.]
+
+**Contract:**
 
 \`\`\`ts
 // path/to/file.ts
-// Full implementation — no pseudo-code, no // TODO
+export type Thing = { id: string; name: string; status: "draft" | "live" };
+export function listThings(input: { limit?: number }): Promise<Thing[]>;
 \`\`\`
+
+**Tests to write** (one line per case, no bodies):
+- returns an empty array when no rows exist
+- rejects `limit` above 100 with a validation error
 
 **Step 2: [Step description]**
 
@@ -185,6 +192,10 @@ git commit -m "feat(pie-N): N.M — [slice name]"
 - Route `/path` renders without errors (capture screenshot proof in the transcript)
 - [Other testable, binary condition — see the contract below]
 ```
+
+### Contract, not implementation
+
+Plan files carry the interface between slices and leave the implementation to the builder. See `agents/phased-plan-writer.md` "Code budget" for the full rule. In short: code fences hold commands, schema DDL, exported signatures and type shapes (about 15 lines each), and byte-exact config fragments. They never hold component, route, action, hook, utility, or test bodies; those are prose (behavior, states, edge cases, named test cases). A slice plan should land under roughly 400 lines with fences well under a fifth of them.
 
 ### Exit-criteria contract (consumed by `/goal`)
 
@@ -255,7 +266,9 @@ Every generated plan file starts with two HTML comment lines:
 
 ## Checkbox format rule
 
-Always use `[ ]` — no leading dash. Never write `- [ ]`.
+Always write checkboxes as GitHub Flavored Markdown task-list items: a list marker, then the box, one item per line.
 
-Correct: `[ ] task description`
-Incorrect: `- [ ] task description`
+Correct: `- [ ] task description`
+Incorrect: `[ ] task description` (no list marker: GitHub and every CommonMark renderer treat this as plain text, so consecutive boxes fold into one paragraph and read horizontally)
+
+A label line such as `Completion criteria:` may sit directly above the list with no blank line; a bullet list can interrupt a paragraph. Never put two boxes on one line, and never nest a box inside a table cell. The plugin hooks (`hooks/lib/checklist.sh`) still count legacy bare `[ ]` lines from checklists generated before this rule changed, so old projects keep working without a rewrite.

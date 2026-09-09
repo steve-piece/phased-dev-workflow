@@ -68,53 +68,53 @@ Do not take partial screenshots. Do not scroll and concatenate images. One full-
 Evaluate each screenshot against this checklist. For each item, record: `pass`, `fail`, or `skip` (with reason):
 
 ### Brand Fidelity
-[ ] Primary colors match design system `--primary` token (not raw color utilities)
-[ ] Typography uses the documented type families — no unsanctioned fonts
-[ ] Component variants (buttons, badges, inputs) match the design system's documented styles
-[ ] No raw hardcoded colors visible in the UI (check DevTools if uncertain)
+- [ ] Primary colors match design system `--primary` token (not raw color utilities)
+- [ ] Typography uses the documented type families — no unsanctioned fonts
+- [ ] Component variants (buttons, badges, inputs) match the design system's documented styles
+- [ ] No raw hardcoded colors visible in the UI (check DevTools if uncertain)
 
 ### Hierarchy and Clarity
-[ ] Visual hierarchy is clear — primary action is the most prominent element
-[ ] Heading levels are visually distinguishable
-[ ] Label/input associations are clear
-[ ] No competing focal points at the same visual weight
+- [ ] Visual hierarchy is clear — primary action is the most prominent element
+- [ ] Heading levels are visually distinguishable
+- [ ] Label/input associations are clear
+- [ ] No competing focal points at the same visual weight
 
 ### Spacing Rhythm
-[ ] Spacing between elements follows a consistent scale (no visually arbitrary gaps)
-[ ] Content padding is consistent within each region
-[ ] Card/panel internal spacing is consistent across viewport widths
+- [ ] Spacing between elements follows a consistent scale (no visually arbitrary gaps)
+- [ ] Content padding is consistent within each region
+- [ ] Card/panel internal spacing is consistent across viewport widths
 
 ### Accessibility — Contrast
-[ ] Text on background meets WCAG AA minimum (4.5:1 for normal text, 3:1 for large text)
-[ ] Interactive elements meet WCAG AA non-text contrast (3:1)
-[ ] Error state text is not color-only — has icon or text label alongside color indicator
-[ ] Focus ring is visible on interactive elements (check keyboard tab through the page)
+- [ ] Text on background meets WCAG AA minimum (4.5:1 for normal text, 3:1 for large text)
+- [ ] Interactive elements meet WCAG AA non-text contrast (3:1)
+- [ ] Error state text is not color-only — has icon or text label alongside color indicator
+- [ ] Focus ring is visible on interactive elements (check keyboard tab through the page)
 
 ### Accessibility — Keyboard Navigation
-[ ] Tab order follows visual reading order
-[ ] Focus visible on all interactive elements (no focus ring suppression)
-[ ] Modals / popovers trap focus correctly
-[ ] Skip links present if the page has repeated navigation
+- [ ] Tab order follows visual reading order
+- [ ] Focus visible on all interactive elements (no focus ring suppression)
+- [ ] Modals / popovers trap focus correctly
+- [ ] Skip links present if the page has repeated navigation
 
 ### Accessibility — Motion
-[ ] Skeleton animations are suppressed with `prefers-reduced-motion` (verify in DevTools by enabling the media query emulation)
-[ ] Transitions respect `prefers-reduced-motion`
+- [ ] Skeleton animations are suppressed with `prefers-reduced-motion` (verify in DevTools by enabling the media query emulation)
+- [ ] Transitions respect `prefers-reduced-motion`
 
 ### Responsive Behavior
-[ ] 375px: layout stacks correctly, no horizontal overflow, text is readable
-[ ] 768px: transition points behave as documented in the breakpoint plan
-[ ] 1280px: full layout as designed, sidebar/panel visible if applicable
-[ ] 1920px: max-width constraint applied, content centered
+- [ ] 375px: layout stacks correctly, no horizontal overflow, text is readable
+- [ ] 768px: transition points behave as documented in the breakpoint plan
+- [ ] 1280px: full layout as designed, sidebar/panel visible if applicable
+- [ ] 1920px: max-width constraint applied, content centered
 
 ### Dark Mode Parity (if applicable)
-[ ] Dark mode tokens applied consistently — no light-mode color leaking into dark mode
-[ ] Contrast ratios hold in dark mode
+- [ ] Dark mode tokens applied consistently — no light-mode color leaking into dark mode
+- [ ] Contrast ratios hold in dark mode
 
 ### UI State Coverage
-[ ] Loading skeleton visible and layout-accurate
-[ ] Empty state present with message and (if appropriate) CTA
-[ ] Error state present with human-readable message
-[ ] Success confirmation visible after mutation action
+- [ ] Loading skeleton visible and layout-accurate
+- [ ] Empty state present with message and (if appropriate) CTA
+- [ ] Error state present with human-readable message
+- [ ] Success confirmation visible after mutation action
 
 ## Console and Network Check (using Chrome DevTools MCP or browser DevTools)
 

@@ -160,15 +160,15 @@ Write `ROADMAP.local.md` at the new project root:
 Personal scratchpad for future versions and next dev stages. Not committed to the remote.
 
 ## Next ByTheSlice run
-[ ] Brief idea
-[ ] Brand notes / design references
-[ ] Open questions to resolve before /bytheslice:create-menu
+- [ ] Brief idea
+- [ ] Brand notes / design references
+- [ ] Open questions to resolve before /bytheslice:create-menu
 
 ## Future versions / Phase 2+
-[ ] ...
+- [ ] ...
 
 ## Friction notes (for future /bytheslice:close-shop)
-[ ] ...
+- [ ] ...
 ```
 
 Then proceed to **Step 2**.
@@ -354,19 +354,19 @@ hitl_context: "Detected existing package.json at the working directory; user exp
 
 ## Completion Checklist
 
-[ ] Flow detected correctly (A / B / C) and announced to the user
-[ ] Step 1 ran ONLY in Flow B (skipped in Flow A and Flow C)
-[ ] Step 2 ran in every flow (always required)
-[ ] Group 1 ran ONLY when `~/.bytheslice/defaults.json` exists (skipped on first run + during Flow A)
-[ ] Group 2 ran when needed (no defaults, OR Group 1 = "No", OR Flow A)
-[ ] Generated config file is valid JSONC (parses cleanly, no syntax errors)
-[ ] Generated config file is at the correct path (Flow A: `~/.bytheslice/defaults.json`; Flow B/C: project root)
-[ ] (Flow B only) `.gitignore` includes the personal-scratchpad and AI-tooling-workspace entries
-[ ] (Flow B only) Initial git commit created on `main`
-[ ] Step 3 (CI/CD baseline check) ran in Flow B and Flow C (skipped in Flow A)
-[ ] Step 3 detected ci_cd_ready accurately based on the four markers
-[ ] (Step 3 + ci_cd_ready false + user said no) `.bytheslice/.skip-ci-cd` sentinel file written
-[ ] Next-step pointer printed to the user, including CI/CD baseline status line
+- [ ] Flow detected correctly (A / B / C) and announced to the user
+- [ ] Step 1 ran ONLY in Flow B (skipped in Flow A and Flow C)
+- [ ] Step 2 ran in every flow (always required)
+- [ ] Group 1 ran ONLY when `~/.bytheslice/defaults.json` exists (skipped on first run + during Flow A)
+- [ ] Group 2 ran when needed (no defaults, OR Group 1 = "No", OR Flow A)
+- [ ] Generated config file is valid JSONC (parses cleanly, no syntax errors)
+- [ ] Generated config file is at the correct path (Flow A: `~/.bytheslice/defaults.json`; Flow B/C: project root)
+- [ ] (Flow B only) `.gitignore` includes the personal-scratchpad and AI-tooling-workspace entries
+- [ ] (Flow B only) Initial git commit created on `main`
+- [ ] Step 3 (CI/CD baseline check) ran in Flow B and Flow C (skipped in Flow A)
+- [ ] Step 3 detected ci_cd_ready accurately based on the four markers
+- [ ] (Step 3 + ci_cd_ready false + user said no) `.bytheslice/.skip-ci-cd` sentinel file written
+- [ ] Next-step pointer printed to the user, including CI/CD baseline status line
 
 ---
 

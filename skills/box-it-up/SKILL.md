@@ -223,52 +223,52 @@ Walk the checklist that matches the mode. Do not report done until every applica
 
 ### Per-slice mode
 
-[ ] Current branch confirmed not `main` / `master` (it is the pie branch).
-[ ] Slice committed with a `feat(pie-N): N.M — <name>` (or fix/chore/docs) message.
-[ ] Branch pushed to `origin`.
-[ ] No PR opened, no CI watched — returned cleanly so the loop continues.
+- [ ] Current branch confirmed not `main` / `master` (it is the pie branch).
+- [ ] Slice committed with a `feat(pie-N): N.M — <name>` (or fix/chore/docs) message.
+- [ ] Branch pushed to `origin`.
+- [ ] No PR opened, no CI watched — returned cleanly so the loop continues.
 
 ### Pie-completion / universal mode
 
 #### 1. Pre-flight passed
 
-[ ] Current branch confirmed not `main` / `master`.
-[ ] Worktree state captured (path + IS_WORKTREE flag).
-[ ] No accidental reuse of a recently-merged branch.
-[ ] `gh` authenticated.
-[ ] (pie mode) Every slice under the active Pie is `[x]`.
+- [ ] Current branch confirmed not `main` / `master`.
+- [ ] Worktree state captured (path + IS_WORKTREE flag).
+- [ ] No accidental reuse of a recently-merged branch.
+- [ ] `gh` authenticated.
+- [ ] (pie mode) Every slice under the active Pie is `[x]`.
 
 #### 2. Pie PR open
 
-[ ] Any straggler changes committed; branch pushed to `origin`.
-[ ] One PR open against `main` — titled `Pie N: <name>` for a pie (or reused existing).
-[ ] PR URL surfaced to the user.
+- [ ] Any straggler changes committed; branch pushed to `origin`.
+- [ ] One PR open against `main` — titled `Pie N: <name>` for a pie (or reused existing).
+- [ ] PR URL surfaced to the user.
 
 #### 3. CI green on the merged head SHA
 
-[ ] `gh pr checks <pr> --watch` returned exit 0 (CI's single run for the pie).
-[ ] If the auto-fix loop ran, the final attempt cleared green; ci-fix-attempter dispatch history captured.
-[ ] No required check skipped or pending.
+- [ ] `gh pr checks <pr> --watch` returned exit 0 (CI's single run for the pie).
+- [ ] If the auto-fix loop ran, the final attempt cleared green; ci-fix-attempter dispatch history captured.
+- [ ] No required check skipped or pending.
 
 #### 4. Merge authorized + completed (preserving slice commits)
 
-[ ] Phase 4 user prompt surfaced (via `needs_human`/`hitl_*`) and answered.
-[ ] Merge used rebase or merge-commit — **not** squash for a pie; per-slice commits preserved on main.
-[ ] PR state is `MERGED` per `gh pr view`.
+- [ ] Phase 4 user prompt surfaced (via `needs_human`/`hitl_*`) and answered.
+- [ ] Merge used rebase or merge-commit — **not** squash for a pie; per-slice commits preserved on main.
+- [ ] PR state is `MERGED` per `gh pr view`.
 
 #### 5. Branch + worktree cleanup
 
-[ ] On `main` locally.
-[ ] `git pull --ff-only origin main` succeeded.
-[ ] (pie mode) Pie status flipped `In Progress` → `Completed` in the master checklist.
-[ ] Local pie branch deleted (`git branch -d`).
-[ ] Remote pie branch deleted (or already auto-deleted by GitHub).
-[ ] Pie worktree removed via `git worktree remove` and pruned via `git worktree prune` (if a worktree was used).
-[ ] `git status --short` empty; `git status -uno` confirms fully synced with `origin/main`.
+- [ ] On `main` locally.
+- [ ] `git pull --ff-only origin main` succeeded.
+- [ ] (pie mode) Pie status flipped `In Progress` → `Completed` in the master checklist.
+- [ ] Local pie branch deleted (`git branch -d`).
+- [ ] Remote pie branch deleted (or already auto-deleted by GitHub).
+- [ ] Pie worktree removed via `git worktree remove` and pruned via `git worktree prune` (if a worktree was used).
+- [ ] `git status --short` empty; `git status -uno` confirms fully synced with `origin/main`.
 
 #### 6. Final report emitted
 
-[ ] User received the report (PR URL, merge SHA + strategy, slice-commit count, attempt counts, "Pie N closed — next pie in a fresh chat").
+- [ ] User received the report (PR URL, merge SHA + strategy, slice-commit count, attempt counts, "Pie N closed — next pie in a fresh chat").
 
 ---
 
